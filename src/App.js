@@ -1,15 +1,28 @@
+import React from 'react';
 import './App.css';
+import Header from './components/Header';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
+import Blog from './components/Blog';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
-
-export default function App() {
+function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-        <p>Richard Espy</p>
+      <Header />
+      <div className="container">
+        <About />
+        <Portfolio />
+        <Blog />
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 }
 
+export default App;
 
 // Todo
 // Home Page
