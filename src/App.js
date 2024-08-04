@@ -8,7 +8,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-          Richard Espy
         </p>
         <a
           className="App-link"
@@ -16,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Richard Espy
         </a>
       </header>
     </div>
@@ -24,3 +23,7 @@ function App() {
 }
 
 export default App;
+
+// Todo
+// Home Page
+// Menu - About - Resume - Stuff I like - What I'm cooking
