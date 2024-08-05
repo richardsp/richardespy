@@ -7,8 +7,6 @@ const About = () => {
     <div className="bio">
       <img src={profilePic} alt="Richard Espy" />
       <h1>About Me</h1>
-      
-      <h2>Richard Espy: The Man Behind the Code and the Cuisine</h2>
       <p>
         Welcome to my corner of the internet! I’m Richard Espy, a Senior Software QA Engineer based in Los Angeles, California. 
         With a career spanning over two decades, I’ve honed my expertise in software analysis, quality assurance, and team management, 
@@ -21,24 +19,6 @@ const About = () => {
         and friends. Whether I&apos;m perfecting a classic French dish, experimenting with Indian spices, or whipping up a quick and delicious weeknight dinner, 
         I find immense satisfaction in the art of culinary creation.
       </p>
-
-      <h3>A Few Fun Facts:</h3>
-      <ul>
-        <li><strong>Height:</strong> 6’2”</li>
-        <li><strong>Weight:</strong> 295 lbs (working on it!)</li>
-        <li><strong>Age:</strong> 57</li>
-        <li><strong>Favorite Sports Team:</strong> Lifelong LA Clippers fan</li>
-        <li><strong>Hobbies:</strong> Traveling, attending plays and concerts, exploring museums, and enjoying the great outdoors</li>
-        <li><strong>Personality:</strong> Optimistic, humorous, and always up for a game of Scrabble</li>
-      </ul>
-
-      <h3>My Philosophies:</h3>
-      <ul>
-        <li><strong>Learning and Growth:</strong> I believe that every day is an opportunity to learn something new and that personal growth is a lifelong journey.</li>
-        <li><strong>Integrity and Honesty:</strong> These are the cornerstones of my professional and personal life. I strive to be straightforward and genuine in all my interactions.</li>
-        <li><strong>Balance:</strong> While my career is important, I value a balanced life that includes time for family, fun, and fitness.</li>
-      </ul>
-
       <h3>Why This Website?</h3>
       <p>
         This site is a space where I share my professional achievements, culinary adventures, and personal musings. Here, you’ll find my resume, recipes, travel experiences, 
