@@ -1,6 +1,6 @@
 import React from 'react';
 import profilePic from '../assets/profile.jpg'; // Add a profile picture in the assets folder
-import './AboutMe.css'; // Assuming you have some CSS styles for this component
+// import './AboutMe.css'; // Assuming you have some CSS styles for this component
 
 const About = () => {
   return (
@@ -16,9 +16,9 @@ const About = () => {
         the digital world a better place.
       </p>
       <p>
-        But there's more to me than just lines of code and test cases. I’m a proud father of four, a dedicated runner on a mission to conquer a marathon, 
-        and an avid foodie with dreams of opening my own restaurant. Cooking isn’t just a hobby; it's a creative outlet and a way to share joy with my family 
-        and friends. Whether I’m perfecting a classic French dish, experimenting with Indian spices, or whipping up a quick and delicious weeknight dinner, 
+        But there&apos;s more to me than just lines of code and test cases. I&apos;m a proud father of four, a dedicated runner on a mission to conquer a marathon, 
+        and an avid foodie with dreams of opening my own restaurant. Cooking isn&apos;t just a hobby; it&apos;s a creative outlet and a way to share joy with my family 
+        and friends. Whether I&apos;m perfecting a classic French dish, experimenting with Indian spices, or whipping up a quick and delicious weeknight dinner, 
         I find immense satisfaction in the art of culinary creation.
       </p>
 
