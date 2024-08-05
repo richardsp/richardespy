@@ -8,7 +8,7 @@ function About() {
       <div className="bio">
         <img src={profilePic} alt="Richard Espy" />
         <div>
-          <p>Hi, I am Richard Espy. I live in Los Angeles and I am a Senior Software QA Engineer with a passion for cooking. I am also a LA Clippers fan, and I enjoy a wide range of activities from sports to theater.</p>
+          <p>Hi, I&apos;m Richard. I&apos;m a native Ageleno, and a Software QA Engineer with a passion for cooking. I am also a big  <a href="https://www.nba.com/clippers/">LA Clippers</a> fan, and I enjoy a wide range of activities from sports to theater.</p>
         </div>
       </div>
     </section>
