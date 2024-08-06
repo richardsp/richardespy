@@ -3,7 +3,7 @@ import React from 'react';
 function StuffILike() {
   return (
     <section id="stuffilike" className="section">
-      <h2>StuffILike</h2>
+      <h2>Stuff I Like</h2>
       <p>These are the things that interest me.</p>
     </section>
   );
