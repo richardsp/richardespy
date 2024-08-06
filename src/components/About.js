@@ -19,10 +19,8 @@ const About = () => {
         and friends. Whether I&apos;m perfecting a classic French dish, experimenting with Indian spices, or whipping up a quick and delicious weeknight dinner, 
         I find immense satisfaction in the art of culinary creation.
       </p>
-      <h3>Why This Website?</h3>
       <p>
-        This site is a space where I share my professional achievements, culinary adventures, and personal musings. Here, you’ll find my resume, recipes, travel experiences, 
-        and perhaps a few tunes I’ve composed. It’s a reflection of who I am – a tech enthusiast, a creative cook, and a perpetual optimist.
+        This site is a space where I share my professional achievements, culinary adventures, and personal musings. Here, you’ll find my resume, recipes, and travel experiences. It’s a reflection of who I am – a tech enthusiast, a creative cook, and a perpetual optimist.
       </p>
       <p>
         Thanks for stopping by! Feel free to explore, connect, and share your thoughts. Whether you’re here for tech insights, cooking tips, or just to say hello, 
