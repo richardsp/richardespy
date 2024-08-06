@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Blog from './components/Blog';
+import Resume from './components/Resume';
+import Cooking from './components/Cooking';
+import StuffILike from './components/StuffILike';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -13,8 +14,9 @@ function App() {
       <Header />
       <div className="container">
         <About />
-        <Portfolio />
-        <Blog />
+        <Resume />
+        <Cooking />
+        <StuffILike />
         <Contact />
       </div>
       <Footer />
