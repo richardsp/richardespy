@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import About from './components/Home';
+import Home from './components/Home';
 import Resume from './components/Resume';
 import Cooking from './components/Cooking';
 import StuffILike from './components/StuffILike';
