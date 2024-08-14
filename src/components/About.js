@@ -19,13 +19,14 @@ const About = () => {
         I find immense satisfaction in the art of culinary creation.
       </p>
       <p>
-        This site is a space where I can share my professional achievements, culinary adventures, and personal musings. Here, you&apos;ll find my resume, recipes, and travel experiences. It&apos;s a reflection of who I am – a tech enthusiast, a creative cook, and a perpetual optimist.
+        This site is a space where I share my professional achievements, culinary adventures, and personal musings. Here, you&apos;ll find my resume, recipes, and travel experiences. It&apos;s a reflection of who I am – a tech enthusiast, a creative cook, and a perpetual optimist.
       </p>
       <p>
-        Thanks for stopping by!
+        Thanks for stopping by! Feel free to explore, connect, and share your thoughts. Whether you’re here for tech insights, cooking tips, or just to say hello, 
+        I’m glad you’re part of my journey.
       </p>
     </div>
   );
 };
 
-export default Home;
+export default About;
