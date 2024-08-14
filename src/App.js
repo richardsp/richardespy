@@ -8,7 +8,6 @@ import Cooking from './components/Cooking';
 import StuffILike from './components/StuffILike';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-// import Home from './components/Home';  // Assuming you have a Home component
 
 function App() {
   return (
@@ -37,7 +36,6 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/cooking" element={<Cooking />} />
             <Route path="/stuff-i-like" element={<StuffILike />} />
