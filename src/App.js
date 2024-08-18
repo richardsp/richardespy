@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
@@ -10,22 +11,20 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Header />
       <div className="container">
-        <About />
-        <Resume />
-        <Cooking />
-        <StuffILike />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/cooking" element={<Cooking />} />
+          <Route path="/stuffilike" element={<StuffILike />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
 export default App;
-
-// Todo
-// Home Page
-// Menu - About - Resume - Stuff I like - What I'm cooking
