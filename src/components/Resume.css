@@ -1,0 +1,80 @@
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .resume-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .resume-section-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .resume-section-content {
+    margin-bottom: 1.5em;
+  }
+  
+  .resume-job-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+  }
+  
+  .resume-job-details {
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+  
+  .resume-job-responsibilities {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .resume-collapse-header {
+    cursor: pointer;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .resume-collapse-icon {
+    margin-right: 0.5em;
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(90deg);
+  }
+  
+  .resume-collapsible-content {
+    margin-top: 0.5em;
+  }
+  
+  .resume-contact-info {
+    margin: 0.3em 0;
+  }
+  
+  .resume-download {
+    text-align: center;
+    margin-top: 2em;
+  }
+  
+  .resume-download-link {
+    font-size: 1.2em;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .resume-download-link:hover {
+    text-decoration: underline;
+  }
+  
