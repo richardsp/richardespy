@@ -7,6 +7,7 @@ import Resume from './components/Resume';
 import Cooking from './components/Cooking';
 import StuffILike from './components/StuffILike';
 import Contact from './components/Contact';
+import WhatILearned from './components/WhatILearned';
 import Footer from './components/Footer';
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           <Route path="/stuffilike" element={<StuffILike />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+      </div>
+      <div>
+        <WhatILearned />
       </div>
       <Footer />
     </Router>
