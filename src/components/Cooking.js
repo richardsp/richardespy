@@ -24,7 +24,6 @@ const recipes = [
   // Add more recipes here...
 ];
 
-
 function Cooking() {
   return (
     <section id="cooking" className="section">
@@ -57,3 +56,4 @@ function Cooking() {
 }
 
 export default Cooking;
+

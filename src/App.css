@@ -124,12 +124,14 @@ footer p {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  text-align: left;
 }
 
 .scrollable-table tbody {
   display: block;
   height: 300px; /* Set the height of the table body */
   overflow-y: auto;
+  width: 100%;
 }
 
 .scrollable-table tbody tr {
@@ -142,4 +144,15 @@ footer p {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   text-align: left;
+}
+
+.what-i-learned-container {
+  width: 60%;
+  margin: 0 auto; /* Center align the component */
+  text-align: center;
+}
+
+.what-i-learned-container table {
+  margin: 0 auto; /* Center align the table within the container */
+  width: 100%; /* Ensure the table occupies full width of the container */
 }

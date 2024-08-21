@@ -8,7 +8,7 @@ const stuffImWorkingOn = [
 
 function WhatILearned() {
   return (
-    <section id="whatilearned" className="section">
+    <section id="whatilearned" className="section what-i-learned-container">
       <h2>What I learned today</h2>
       <p>This is what I'm working on.</p>
       <table className="scrollable-table">
