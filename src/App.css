@@ -106,3 +106,40 @@ footer p {
     margin: 0 auto 20px;
   }
 }
+
+.scrollable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.scrollable-table thead {
+  background-color: #f8f8f8;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.scrollable-table thead th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.scrollable-table tbody {
+  display: block;
+  height: 300px; /* Set the height of the table body */
+  overflow-y: auto;
+}
+
+.scrollable-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.scrollable-table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
