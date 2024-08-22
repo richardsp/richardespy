@@ -110,49 +110,51 @@ footer p {
 .scrollable-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 20px 0;
+  table-layout: fixed;
+}
+
+.scrollable-table.learned-table {
+  width: 70%; /* Adjusts the width for the "What I Learned" table */
+  margin: 20px auto; /* Centers the table */
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
 }
 
 .scrollable-table thead {
-  background-color: #f8f8f8;
+  background-color: #f2f2f2;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
-.scrollable-table thead th {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
+.scrollable-table th:first-child,
+.scrollable-table td:first-child,
+.scrollable-table th:nth-child(2),
+.scrollable-table td:nth-child(2) {
+  width: 120px;
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  width: auto;
 }
 
 .scrollable-table tbody {
   display: block;
-  height: 300px; /* Set the height of the table body */
+  height: 400px;
   overflow-y: auto;
-  width: 100%;
 }
 
+.scrollable-table thead,
 .scrollable-table tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-}
-
-.scrollable-table tbody td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
-
-.what-i-learned-container {
-  width: 60%;
-  margin: 0 auto; /* Center align the component */
-  text-align: center;
-}
-
-.what-i-learned-container table {
-  margin: 0 auto; /* Center align the table within the container */
-  width: 100%; /* Ensure the table occupies full width of the container */
 }
