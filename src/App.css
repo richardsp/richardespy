@@ -95,6 +95,7 @@ footer {
 
 footer p {
   margin: 0;
+  z-index: 200;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +132,7 @@ footer p {
   background-color: #f2f2f2;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
 .scrollable-table th:first-child,
