@@ -11,7 +11,7 @@ const Resume = () => {
 
   return (
     <div className="resume-container">
-      <h1 className="resume-title">Richard Espy - Resume</h1>
+      <h1 className="resume-title">Resume</h1>
 
       <section>
         <h2 className="resume-section-title">Summary</h2>
