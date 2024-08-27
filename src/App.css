@@ -172,6 +172,46 @@ footer p {
 }
 
 /* Responsive Table Design */
+
+/* "What I Worked On Today" - Mobile Design */
+@media (max-width: 768px) {
+  .scrollable-table.learned-table {
+    width: 100%;
+  }
+
+  .scrollable-table.learned-table thead {
+    display: none;
+  }
+
+  .scrollable-table.learned-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #828077;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #fff;
+  }
+
+  .scrollable-table.learned-table tbody td:nth-child(1),
+  .scrollable-table.learned-table tbody td:nth-child(2) {
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .scrollable-table.learned-table tbody td:nth-child(3) {
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .scrollable-table.learned-table tbody td {
+    width: 100%;
+    text-align: left;
+    word-wrap: break-word;
+  }
+}
+
+/* "Cooking" Table - Mobile Design */
 @media (max-width: 768px) {
   .scrollable-table {
     display: block;
@@ -182,27 +222,23 @@ footer p {
   }
   
   .scrollable-table tbody tr {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #828077;
     margin-bottom: 10px;
-    border-bottom: 1px solid #828077;
+    padding: 8px;
+    background-color: #fff;
   }
 
   .scrollable-table tbody td {
     display: block;
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-    white-space: pre-wrap;
+    text-align: left;
+    word-wrap: break-word;
   }
 
-  .scrollable-table tbody td:before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 15px;
-    font-weight: bold;
-    text-align: left;
+  .scrollable-table tbody td:nth-child(1),
+  .scrollable-table tbody td:nth-child(2) {
+    display: none;
   }
 }
 
