@@ -28,7 +28,7 @@ const About = () => {
         I’m glad you’re part of my journey.
       </p>
     </div><div>
-        <WhatILearned />
+        {/* <WhatILearned /> */}
     </div></>
   );
 };
