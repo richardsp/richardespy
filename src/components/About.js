@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import WhatILearned from '../components/WhatILearned';
+// import WhatILearned from '../components/WhatILearned';
 import profilePic from '../assets/profile.jpg'; // Add a profile picture in the assets folder
 // import './AboutMe.css'; // Assuming you have some CSS styles for this component
 

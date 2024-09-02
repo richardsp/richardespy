@@ -247,3 +247,37 @@ a:hover, tr:hover {
   background-color: #828077;
   color: white;
 }
+
+.recipe-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.recipe-page h2 {
+  font-size: 2rem;
+  color: #73999B;
+}
+
+.recipe-page ul, .recipe-page ol {
+  padding-left: 20px;
+}
+
+.recipe-page ul li, .recipe-page ol li {
+  margin-bottom: 10px;
+}
+
+.recipe-page .recipe-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recipe-page a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.recipe-page a:hover {
+  color: #828077;
+}

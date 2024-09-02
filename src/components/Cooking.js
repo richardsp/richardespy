@@ -1,31 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const recipesData = [
-    { id: 1, made: false, keeper: false, type: 'Dessert', name: 'Gooey Butter Cake', source: 'Taste of Home' },
-    { id: 2, made: false, keeper: false, type: 'Dessert', name: 'Basque Cheesecake', source: 'Kitchn' },
-    { id: 3, made: false, keeper: false, type: 'Dessert', name: 'Lemon Pound Cake', source: 'Bon Appetit' },
-    { id: 4, made: true, keeper: true, type: 'Main', name: 'Mushroom Bacon Risotto', source: 'Tasty' },
-    { id: 5, made: false, keeper: false, type: 'Main', name: 'Lentil Soup', source: 'Cookie And Kate' },
-    { id: 6, made: false, keeper: false, type: 'Dessert', name: 'Choux au Craquelin', source: 'Serious Eats' },
-    { id: 7, made: false, keeper: false, type: 'Main', name: 'Chicken Fried Steak', source: 'Food Network' },
-    { id: 8, made: true, keeper: true, type: 'Dessert', name: 'Butter Pecan Pound Cake', source: 'Kitchn' },
-    { id: 9, made: false, keeper: false, type: 'Main', name: 'Pan-Roasted Salmon', source: 'Food & Wine' },
-    { id: 10, made: false, keeper: false, type: 'Main', name: 'Garlic Shrimp with Chorizo', source: 'Food Network' },
-    { id: 11, made: false, keeper: false, type: 'Main', name: 'Pozole Verde', source: 'Serious Eats' },
-    { id: 12, made: false, keeper: false, type: 'Side', name: 'Potato Casserole', source: 'Kitchn' },
-    { id: 13, made: false, keeper: false, type: 'Bread', name: 'Baguette', source: 'Brian Lagerstrom' },
-    { id: 14, made: true, keeper: true, type: 'Main', name: 'Detroit Pizza', source: 'Kitchn' },
-    { id: 15, made: false, keeper: false, type: 'Bread', name: 'Sandwich Bread', source: 'King Arthur' },
-    { id: 16, made: false, keeper: false, type: 'Dessert', name: 'Finsk Brod', source: 'Fab Food 4 All' },
-    { id: 17, made: false, keeper: false, type: 'Main', name: 'Shrimp & Grits', source: 'Food & Wine' },
-    { id: 18, made: false, keeper: false, type: 'Main', name: 'Korean Spareribs', source: 'Food & Wine' },
-    { id: 19, made: false, keeper: false, type: 'Bread', name: 'Burger Buns', source: 'Joshua Weissman' },
-    { id: 20, made: false, keeper: false, type: 'Main', name: 'Enchiladas', source: 'Joshua Weissman' },
+  { id: 1, made: true, keeper: true, type: 'Main', name: 'Detroit Pizza', source: 'Kitchn', link: 'https://www.thekitchn.com/detroit-pizza-recipe-23281165' }, // External link
+  { id: 2, made: false, keeper: false, type: 'Bread', name: 'Burger Buns', source: 'Joshua Weissman' },
+  { id: 3, made: true, keeper: true, type: 'Main', name: 'Chicken Rice', source: 'Richard Espy', link: '/recipes/chickenrice' }, // Internal link
+  { id: 4, made: true, keeper: true, type: 'Main', name: 'Butter Chicken', source: 'ChatGPT', link: '/recipes/butterchicken' }, // Internal link
   // Your recipe data here...
 ];
 
 function Cooking() {
-  const [recipes] = useState(recipesData); // Removed 'setRecipes'
+  const [recipes] = useState(recipesData);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
 
   const sortedRecipes = React.useMemo(() => {
@@ -72,7 +57,13 @@ function Cooking() {
               <td><input type="checkbox" checked={recipe.made} readOnly /></td>
               <td><input type="checkbox" checked={recipe.keeper} readOnly /></td>
               <td>{recipe.type}</td>
-              <td>{recipe.name}</td>
+              <td>
+                {recipe.link?.startsWith('http') ? (
+                  <a href={recipe.link} target="_blank" rel="noopener noreferrer">{recipe.name}</a>
+                ) : (
+                  <Link to={recipe.link}>{recipe.name}</Link>
+                )}
+              </td>
               <td>{recipe.source}</td>
             </tr>
           ))}
