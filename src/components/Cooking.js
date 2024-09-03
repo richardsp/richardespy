@@ -5,7 +5,8 @@ const recipesData = [
   { id: 1, made: true, keeper: true, type: 'Main', name: 'Detroit Pizza', source: 'Kitchn', link: 'https://www.thekitchn.com/detroit-pizza-recipe-23281165' }, // External link
   { id: 2, made: false, keeper: false, type: 'Bread', name: 'Burger Buns', source: 'Joshua Weissman' },
   { id: 3, made: true, keeper: true, type: 'Main', name: 'Chicken Rice', source: 'Richard Espy', link: '/recipes/chickenrice' }, // Internal link
-  { id: 4, made: true, keeper: true, type: 'Main', name: 'Butter Chicken', source: 'ChatGPT', link: '/recipes/butterchicken' }, // Internal link
+  { id: 4, made: true, keeper: true, type: 'Main', name: 'Butter Chicken', source: 'ChatGPT', link: '/recipes/butterchicken' },
+  { id: 5, made: true, keeper: true, type: 'Main', name: 'Peanut Butter and Nutella Shortbread Cookies', source: 'ChatGPT', link: '/recipes/peanutbuttershortbread' }, // Internal link
   // Your recipe data here...
 ];
 
@@ -40,7 +41,7 @@ function Cooking() {
   return (
     <section id="cooking" className="section">
       <h2>Cooking</h2>
-      <p>Here are the things I'm making, the things I have made, and recipes I have on repeat.</p>
+      <p>I really enjoy cooking. Here are some of the recipes I like and make repeatedly, some things I plan on trying, and some recipes I'm develpoing myself.</p>
       <table className="scrollable-table">
         <thead>
           <tr>
