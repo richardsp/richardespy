@@ -15,6 +15,9 @@ const ChickenRice = () => {
   const recipeData = {
     title: 'Chicken Rice',
     description: "This is my own recipe for Chicken Rice, a favorite dish in my household.",
+    prepTime: '15 minutes',
+    cookTime: '30-40 minutes',
+    servings: '6-8',
     ingredients: [
       '1 Costco rotisserie chicken (approximately 3 lbs)',
       '5 cups basmati rice, rinsed',
@@ -41,7 +44,8 @@ const ChickenRice = () => {
       'Finish: Once the rice is done, open the rice cooker and gently fluff the rice and chicken together. Add the frozen peas now if using and close the rice cooker for 5 more minutes to allow the peas to warm through.',
       'Garnish and serve: Stir in the green onions and serve.'
     ],
-    // imageSrc: '/assets/chickenrice.jpg' // Add the path to your image if needed
+    imageSrc: '/assets/chickenrice.jpg', // Ensure the path is correct or remove if not using
+    imageAlt: 'Chicken Rice'
   };
 
   return <RecipeTemplate {...recipeData} />;

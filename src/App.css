@@ -291,3 +291,25 @@ a:hover, tr:hover {
 .recipe-page a:hover {
   text-decoration: underline;
 }
+/* Cooking page list styling */
+.recipe-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recipe-item {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.recipe-item h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.recipe-item p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: #555;
+}

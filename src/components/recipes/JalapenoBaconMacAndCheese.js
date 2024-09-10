@@ -2,7 +2,7 @@ import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
 export const recipeMetadata = {
-  name: 'Jalapeno Bacon Mac & Cheese',
+  name: 'Jalape\u00F1o Bacon Mac & Cheese',
   type: 'Main',
   source: 'Self Developed',
   link: '/recipes/jalapenobaconmacandcheese',
