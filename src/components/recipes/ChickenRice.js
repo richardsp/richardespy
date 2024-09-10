@@ -1,42 +1,41 @@
+// ChickenRice.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import RecipeTemplate from './RecipeTemplate';
 
-function ChickenRice() {
-  return (
-    <div className="recipe-page">
-      <h2>Chicken Rice</h2>
-      <p>This is one of my go to weekday dinners. It's especially nice because there are very few dishes to clean up after. Get a jar of garlic chili crisp or a bottle of siracha for serving!</p>
+const ChickenRice = () => {
+  const recipeData = {
+    title: 'Chicken Rice',
+    description: "This is my own recipe for Chicken Rice, a favorite dish in my household.",
+    ingredients: [
+      '1 Costco rotisserie chicken (approximately 3 lbs)',
+      '5 cups basmati rice, rinsed',
+      '6 cups chicken stock',
+      '1/2 onion, finely chopped',
+      '2 carrots, cubed',
+      '5 cloves garlic, minced',
+      '1 tsp turmeric',
+      '1 tsp smoked paprika',
+      '1 tsp ground cumin (optional)',
+      '1/2 tsp ground coriander (optional)',
+      '1 bay leaf',
+      'Salt and pepper to taste',
+      '1 cup frozen peas (optional)',
+      '3 green onions, thinly sliced for garnish'
+    ],
+    instructions: [
+      'Prepare the chicken: Debone the rotisserie chicken and remove the skin. Cut the meat into small, bite-sized cubes and set aside.',
+      'Prepare the rice: Rinse the rice under cold water until the water runs clear. Drain and transfer to your rice cooker.',
+      'Sauté the vegetables: In a pan, heat a bit of oil over medium heat. Sauté the onion, carrots, and garlic until soft and fragrant, about 3-4 minutes.',
+      'Assemble in the rice cooker: Add the sautéed vegetables to the rice cooker. Stir in the turmeric, paprika, cumin, coriander, and bay leaf. Add salt and pepper to taste. Pour in the chicken stock and stir to combine.',
+      'Add the chicken: Evenly distribute the cubed chicken on top of the rice mixture.',
+      'Cook: Close the rice cooker and start the cooking process. Let it complete the cycle.',
+      'Finish: Once the rice is done, open the rice cooker and gently fluff the rice and chicken together. Add the frozen peas now if using and close the rice cooker for 5 more minutes to allow the peas to warm through.',
+      'Garnish and serve: Stir in the green onions and serve.'
+    ],
+    // imageSrc: '/assets/chickenrice.jpg' // Add the path to your image if needed
+  };
 
-      <h3>Ingredients</h3>
-      <ul>
-        <li><strong>1 Costco rotisserie chicken</strong> (approximately 3 lbs)</li>
-        <li><strong>5 cups basmati rice</strong>, rinsed</li>
-        <li><strong>6 cups chicken stock</strong></li>
-        <li><strong>1/2 onion</strong>, finely chopped</li>
-        <li><strong>2 carrots</strong>, cubed</li>
-        <li><strong>5 cloves garlic</strong>, minced</li>
-        <li><strong>1 tsp turmeric</strong></li>
-        <li><strong>1 tsp smoked paprika</strong></li>
-        <li><strong>1 tsp ground cumin</strong> (optional, for added depth)</li>
-        <li><strong>1/2 tsp ground coriander</strong> (optional)</li>
-        <li><strong>1 bay leaf</strong></li>
-        <li>Salt and pepper to taste</li>
-        <li><strong>1 cup frozen peas</strong> (optional)</li>
-        <li><strong>3 green onions</strong>, thinly sliced for garnish</li>
-      </ul>
-
-      <h3>Instructions</h3>
-      <ol>
-        <li>Debone the <strong>rotisserie chicken</strong> and cut the meat into small cubes. Set aside.</li>
-        <li>Rinse the <strong>basmati rice</strong> and transfer it to your rice cooker.</li>
-        <li>Sauté the <strong>onion, carrots,</strong> and <strong>garlic</strong> in a pan for extra flavor.</li>
-        <li>Add sautéed vegetables to the rice cooker with <strong>turmeric, paprika, cumin, coriander,</strong> and <strong>bay leaf</strong>. Add <strong>chicken stock</strong>, and stir.</li>
-        <li>Top with <strong>chicken</strong> and cook in the rice cooker.</li>
-        <li>After cooking, fluff the rice and mix in <strong>peas</strong> if desired. Garnish with <strong>green onions</strong>.</li>
-      </ol>
-      <Link to="/cooking">Back to Cooking</Link>
-    </div>
-  );
-}
+  return <RecipeTemplate {...recipeData} />;
+};
 
 export default ChickenRice;

@@ -1,18 +1,21 @@
-// RecipeTemplate.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function RecipeTemplate({ title, description, ingredients, instructions, imageSrc }) {
+function RecipeTemplate({ title, ingredients, instructions, imageSrc, imageAlt }) {
   return (
     <div className="recipe-page">
       <h2>{title}</h2>
-      {imageSrc && <img src={imageSrc} alt={title} className="recipe-image" />}
-      <p>{description}</p>
       
+      {imageSrc && (
+        <div className="recipe-image">
+          <img src={imageSrc} alt={imageAlt} />
+        </div>
+      )}
+
       <h3>Ingredients</h3>
       <ul>
         {ingredients.map((ingredient, index) => (
-          <li key={index}><strong>{ingredient}</strong></li>
+          <li key={index}>{ingredient}</li>
         ))}
       </ul>
 
