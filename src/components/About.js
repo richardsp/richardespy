@@ -21,11 +21,11 @@ const About = () => {
         I find immense satisfaction in the art of culinary creation.
       </p>
       <p>
-        This site is where I can teach myself new skills, talk about my culinary adventures, and share <Link to='/stuffilike'>things I like</Link>. It&apos;s a reflection of who I am – a tech enthusiast, a creative cook, and a perpetual optimist.
+        This site is where I teach myself new skills, talk about my culinary adventures, and share <Link to='/stuffilike'>my ideas</Link>.
       </p>
       <p>
-        Thanks for stopping by! Feel free to explore, <Link to='contact'>connect</Link>, and share your thoughts.
-        I’m glad you’re part of my journey.
+        Thanks for stopping by! Feel free to <Link to='contact'>connect</Link>, and share your thoughts.
+        I’m glad you’re here.
       </p>
     </div><div>
         {/* <WhatILearned /> */}
