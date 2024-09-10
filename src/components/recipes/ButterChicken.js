@@ -2,6 +2,15 @@
 import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
+export const recipeMetadata = {
+  name: 'Butter Chicken',
+  type: 'Main',
+  source: 'ChatGPT',
+  link: '/recipes/butterchicken',
+  made: true,
+  keeper: true,
+};
+
 const ButterChicken = () => {
   const recipeData = {
     title: 'Butter Chicken',

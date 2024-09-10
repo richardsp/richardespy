@@ -1,6 +1,15 @@
 import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
+export const recipeMetadata = {
+  name: 'Coffee Toffee Ice Cream',
+  type: 'Desert',
+  source: 'Self Developed',
+  link: '/recipes/coffeetoffeeicecream',
+  made: true,
+  keeper: true,
+};
+
 function CoffeeToffeeIceCream() {
   const ingredients = [
     "1 cup (200g) granulated sugar",

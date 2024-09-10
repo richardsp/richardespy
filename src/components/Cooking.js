@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const recipesData = [
-  { id: 1, made: true, keeper: true, type: 'Main', name: 'Detroit Pizza', source: 'Kitchn', link: 'https://www.thekitchn.com/detroit-pizza-recipe-23281165' }, // External link
-  { id: 2, made: false, keeper: false, type: 'Bread', name: 'Burger Buns', source: 'Joshua Weissman' },
-  { id: 3, made: true, keeper: true, type: 'Main', name: 'Chicken Rice', source: 'Richard Espy', link: '/recipes/chickenrice' }, // Internal link
-  { id: 4, made: true, keeper: true, type: 'Main', name: 'Butter Chicken', source: 'ChatGPT', link: '/recipes/butterchicken' },
-  { id: 5, made: true, keeper: true, type: 'Main', name: 'Peanut Butter and Nutella Shortbread Cookies', source: 'ChatGPT', link: '/recipes/peanutbuttershortbread' }, // Internal link
-  // Your recipe data here...
-];
+// Use Webpack's require.context to dynamically load all recipes
+const requireRecipe = require.context('./recipes', true, /^\.\/(?!RecipeTemplate).*\.js$/);
+
+// Create an array to store all recipe metadata
+const recipesData = requireRecipe.keys().map((fileName) => {
+  const recipeModule = requireRecipe(fileName);
+  return recipeModule.recipeMetadata;
+});
 
 function Cooking() {
   const [recipes] = useState(recipesData);
@@ -41,12 +41,12 @@ function Cooking() {
   return (
     <section id="cooking" className="section">
       <h2>Cooking</h2>
-      <p>I really enjoy cooking. Here are some of the recipes I like and make repeatedly, some things I plan on trying, and some recipes I'm develpoing myself.</p>
+      <p>I really enjoy cooking. Here are some of the recipes I like and make repeatedly, some things I plan on trying, and some recipes I'm developing myself.</p>
       <table className="scrollable-table">
         <thead>
           <tr>
             <th onClick={() => requestSort('made')}>Made?</th>
-            <th onClick={() => requestSort('keeper')}>Keeper?</th>
+            <th onClick={() => requestSort('keeper')}>Make Again?</th>
             <th onClick={() => requestSort('type')}>Type</th>
             <th onClick={() => requestSort('name')}>Name</th>
             <th onClick={() => requestSort('source')}>Source</th>
@@ -54,7 +54,7 @@ function Cooking() {
         </thead>
         <tbody>
           {sortedRecipes.map((recipe) => (
-            <tr key={recipe.id}>
+            <tr key={recipe.name}>
               <td><input type="checkbox" checked={recipe.made} readOnly /></td>
               <td><input type="checkbox" checked={recipe.keeper} readOnly /></td>
               <td>{recipe.type}</td>

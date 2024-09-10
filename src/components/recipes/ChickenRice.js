@@ -2,6 +2,15 @@
 import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
+export const recipeMetadata = {
+  name: 'Chicken Rice',
+  type: 'Main',
+  source: 'Self developed',
+  link: '/recipes/chickenrice',
+  made: true,
+  keeper: true,
+};
+
 const ChickenRice = () => {
   const recipeData = {
     title: 'Chicken Rice',

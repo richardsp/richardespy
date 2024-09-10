@@ -1,6 +1,15 @@
 import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
+export const recipeMetadata = {
+  name: 'Peanut Butter Shortbread',
+  type: 'Desert',
+  source: 'Self Developed',
+  link: '/recipes/peanutbuttershortbread',
+  made: true,
+  keeper: true,
+};
+
 function PeanutButterShortbread() {
   const ingredients = [
     "2 cups (400 g) unsalted butter, room temperature",
