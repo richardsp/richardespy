@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import resumePDF from '../assets/Richard_Espy_Resume.pdf';
 import './Resume.css'; // Import a CSS file for additional styling
+const resumePDF = '/assets/Richard_Espy_Resume.pdf';
 
 const Resume = () => {
   const [isExperienceCollapsed, setExperienceCollapsed] = useState(true);
