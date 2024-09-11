@@ -12,12 +12,24 @@ import Footer from './components/Footer';
 // Use Webpack's require.context to dynamically load all recipes
 const requireRecipe = require.context('./components/recipes', true, /^\.\/(?!RecipeTemplate).*\.js$/);
 
+// Use Webpack's require.context to dynamically load all ideas
+const requireIdea = require.context('./components/ideas', true, /^\.\/(?!IdeasTemplate).*\.js$/);
+
 // Create an array to store all recipe components and metadata
 const recipes = requireRecipe.keys().map((fileName) => {
   const recipeModule = requireRecipe(fileName);
   return { 
     Component: recipeModule.default,
     metadata: recipeModule.recipeMetadata
+  };
+});
+
+// Create an array to store all idea components and metadata
+const ideas = requireIdea.keys().map((fileName) => {
+  const ideaModule = requireIdea(fileName);
+  return {
+    Component: ideaModule.default,
+    metadata: ideaModule.ideaMetadata
   };
 });
 
@@ -36,6 +48,11 @@ function App() {
 
           {/* Dynamically Add Recipe Routes */}
           {recipes.map(({ metadata, Component }) => (
+            <Route key={metadata.link} path={metadata.link} element={<Component />} />
+          ))}
+
+          {/* Dynamically Add Idea Routes */}
+          {ideas.map(({ metadata, Component }) => (
             <Route key={metadata.link} path={metadata.link} element={<Component />} />
           ))}
         </Routes>
