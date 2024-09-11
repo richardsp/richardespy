@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 
 const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, imageSrc, imageAlt }) => {
   const [imageError, setImageError] = useState(false);
@@ -41,6 +42,11 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
           <li key={index}>{instruction}</li>
         ))}
       </ol>
+
+      {/* Add the "Back to Cooking" link at the bottom */}
+      <div className="back-link">
+        <Link to="/cooking">Back to Cooking</Link>
+      </div>
     </section>
   );
 };
