@@ -1,14 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-function RecipeTemplate({ title, ingredients, instructions, imageSrc, imageAlt }) {
+const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, imageSrc, imageAlt }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
-    <div className="recipe-page">
+    <section id="recipe" className="section">
       <h2>{title}</h2>
-      
-      {imageSrc && (
+
+      {/* Conditionally display the description */}
+      {description && <p>{description}</p>}
+
+      <div className="recipe-meta">
+        {prepTime && <p><strong>Prep Time:</strong> {prepTime}</p>}
+        {cookTime && <p><strong>Cook Time:</strong> {cookTime}</p>}
+        {servings && <p><strong>Servings:</strong> {servings}</p>}
+      </div>
+
+      {/* Conditionally display the image if available and no error */}
+      {imageSrc && !imageError && (
         <div className="recipe-image">
-          <img src={imageSrc} alt={imageAlt} />
+          <img 
+            src={imageSrc} 
+            alt={imageAlt || title} 
+            onError={() => setImageError(true)} 
+            className="responsive-image"  // Add responsive class
+          />
         </div>
       )}
 
@@ -25,10 +41,8 @@ function RecipeTemplate({ title, ingredients, instructions, imageSrc, imageAlt }
           <li key={index}>{instruction}</li>
         ))}
       </ol>
-
-      <Link to="/cooking">Back to Cooking</Link>
-    </div>
+    </section>
   );
-}
+};
 
 export default RecipeTemplate;

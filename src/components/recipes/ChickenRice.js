@@ -9,12 +9,12 @@ export const recipeMetadata = {
   link: '/recipes/chickenrice',
   made: true,
   keeper: true,
+  description: "This is my own recipe for Chicken Rice, a favorite dish in my household. One of the best things about it is that you only uses 3 dishes to cook it!",
 };
 
 const ChickenRice = () => {
   const recipeData = {
     title: 'Chicken Rice',
-    description: "This is my own recipe for Chicken Rice, a favorite dish in my household.",
     prepTime: '15 minutes',
     cookTime: '30-40 minutes',
     servings: '6-8',

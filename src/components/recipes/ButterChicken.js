@@ -9,12 +9,12 @@ export const recipeMetadata = {
   link: '/recipes/butterchicken',
   made: true,
   keeper: true,
+  description: "My kids wanted me to make Butter Chicken for dinner one evening. I spent some time refining the recipe with ChatGPT. My daughter made naan from scratch to go with it!",
 };
 
 const ButterChicken = () => {
   const recipeData = {
     title: 'Butter Chicken',
-    description: "My kids wanted me to make Butter Chicken for dinner one evening. I spent some time refining the recipe with ChatGPT. My daughter made naan from scratch to go with it!",
     prepTime: '15 minutes',
     cookTime: '30 minutes',
     servings: '4-6',
