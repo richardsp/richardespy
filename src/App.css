@@ -173,3 +173,29 @@ a:hover, tr:hover {
   background-color: #828077;
   color: white;
 }
+
+/* Container ensures image scaling within the content */
+.responsive-image-container {
+  width: 100%;
+  max-width: 600px; /* You can adjust this to limit the image's max width */
+  margin: 0 auto; /* Centers the image */
+}
+
+/* The actual image gets scaled */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures aspect ratio is maintained */
+}
+
+/* Optional: Further mobile optimizations */
+@media (max-width: 768px) {
+  .responsive-image-container {
+    max-width: 100%;
+  }
+
+  .responsive-image {
+    width: 100%;
+  }
+}

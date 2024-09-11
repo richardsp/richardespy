@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link for navigation
 
 const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, imageSrc, imageAlt }) => {
   const [imageError, setImageError] = useState(false);
@@ -8,7 +7,6 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
     <section id="recipe" className="section">
       <h2>{title}</h2>
 
-      {/* Conditionally display the description */}
       {description && <p>{description}</p>}
 
       <div className="recipe-meta">
@@ -17,14 +15,13 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
         {servings && <p><strong>Servings:</strong> {servings}</p>}
       </div>
 
-      {/* Conditionally display the image if available and no error */}
       {imageSrc && !imageError && (
-        <div className="recipe-image">
+        <div className="responsive-image-container">
           <img 
             src={imageSrc} 
             alt={imageAlt || title} 
             onError={() => setImageError(true)} 
-            className="responsive-image"  // Add responsive class
+            className="responsive-image" 
           />
         </div>
       )}
@@ -43,10 +40,7 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
         ))}
       </ol>
 
-      {/* Add the "Back to Cooking" link at the bottom */}
-      <div className="back-link">
-        <Link to="/cooking">Back to Cooking</Link>
-      </div>
+      <a href="/cooking">Back to Cooking</a>
     </section>
   );
 };
