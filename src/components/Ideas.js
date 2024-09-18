@@ -23,8 +23,11 @@ const Ideas = () => {
     <section id="ideas" className="section">
       <h2>Ideas</h2>
       <p>
-        Check out some of my ideas. If any of them speak to you, and you want to make them into reality, 
-        feel free to pursue them!
+        Many years ago, I was talking with a friend about some of my ideas, and how could I monetize them. This friend said something like, "Would the world around you be richer if your ideas were realized, or is it better for you to hold on to them, and hope you do something with them... someday?"
+        </p>
+        <p>
+        This thought spoke to me. Here are all of the things that I would love to realize, but I'm not in a position to do so. If you like any of them, and you want to make them into reality, 
+        it would make me very happy!!
       </p>
 
       {/* Apps Section */}
