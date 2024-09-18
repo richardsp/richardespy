@@ -33,6 +33,10 @@ function MeatyMeatChili() {
     "Toppings: sour cream, shredded cheddar cheese, chopped green onions"
   ];
 
+  const equipment = [
+    "Dutch Oven",
+  ];
+
   const instructions = [
     "Brown the Beef Stew Meat: In batches, brown the 4 pounds of beef stew meat in a large skillet over high heat. Set aside.",
     "Brown the Ground Beef: In a large Dutch oven, brown 1 pound of lean ground beef over medium heat.",
@@ -54,6 +58,7 @@ function MeatyMeatChili() {
       imageSrc="/assets/meatymeatchili.jpg"  // Replace with actual image path
       imageAlt="Meaty Meat Chili"
       ingredients={ingredients}
+      equipment={equipment}
       instructions={instructions}
     />
   );

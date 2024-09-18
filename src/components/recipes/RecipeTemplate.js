@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, imageSrc, imageAlt }) => {
+const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, equipment, imageSrc, imageAlt }) => {
   const [imageError, setImageError] = useState(false);
 
   return (
     <section id="recipe" className="section">
       <h2>{title}</h2>
 
+      {/* Conditionally display the description */}
       {description && <p>{description}</p>}
 
       <div className="recipe-meta">
@@ -15,13 +16,14 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
         {servings && <p><strong>Servings:</strong> {servings}</p>}
       </div>
 
+      {/* Conditionally display the image if available and no error */}
       {imageSrc && !imageError && (
-        <div className="responsive-image-container">
+        <div className="recipe-image">
           <img 
             src={imageSrc} 
             alt={imageAlt || title} 
             onError={() => setImageError(true)} 
-            className="responsive-image" 
+            className="responsive-image"
           />
         </div>
       )}
@@ -32,6 +34,18 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
+
+      {/* Only display equipment section if provided */}
+      {equipment && equipment.length > 0 && (
+        <>
+          <h3>Equipment</h3>
+          <ul>
+            {equipment.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </>
+      )}
 
       <h3>Instructions</h3>
       <ol>

@@ -22,6 +22,11 @@ function CoffeeToffeeIceCream() {
     "Pinch of salt"
   ];
 
+  const equipment = [
+    "Ice cream maker ",
+  ];
+
+
   const instructions = [
     "Make the Base: In a large saucepan, combine 1 cup granulated sugar, 2 cups whole milk, and 2 cups heavy cream. Heat over medium heat until the mixture begins to steam but does not boil.",
     "Add Coffee: Stir in 1/4 cup strong brewed coffee and the browned butter.",
@@ -41,6 +46,7 @@ function CoffeeToffeeIceCream() {
       imageSrc="/assets/bbctic.jpeg"
       imageAlt="Brown Butter Coffee Toffee Ice Cream"
       ingredients={ingredients}
+      equipment={equipment}
       instructions={instructions}
     />
   );

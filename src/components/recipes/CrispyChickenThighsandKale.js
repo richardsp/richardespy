@@ -2,13 +2,15 @@ import React from 'react';
 import RecipeTemplate from './RecipeTemplate';
 
 export const recipeMetadata = {
-  title: "Crispy Chicken Thighs on Kale",
-  description: "One of my go-to meals is crispy-skinned chicken thighs on a bed of kale. It's a fantastic weeknight meal that only really requires a cast iron skillet.",
+  name: "Crispy Chicken Thighs on Kale",  // Use 'name' instead of 'title' for consistency
+  description: "One of my go-to meals is crispy-skinned chicken thighs on a bed of kale. It's a fantastic hands-off weeknight meal that only really requires a cast iron skillet.",
   servings: 4,
   prepTime: "10 minutes",
   cookTime: "35-40 minutes",
   totalTime: "45-50 minutes",
   link: '/recipes/crispychickenthighsandkale',
+  made: true,
+  keeper: true,
 };
 
 const CrispyChickenThighsandKale = () => {
@@ -22,14 +24,11 @@ const CrispyChickenThighsandKale = () => {
     "Freshly ground black pepper to taste",
   ];
 
-//   const equipment = [
-//     "Cast iron skillet",
-//     "Wire rack",
-//     "Spatter shield",
-//     "Tongs",
-//     "Spatula",
-//     "Oven",
-//   ];
+  const equipment = [
+    "Cast iron skillet",
+    "Wire rack",
+    "Spatter shield",
+  ];
 
   const instructions = [
     "Pat the chicken thighs dry and score the skin a couple of times. Season generously with salt and pepper. Dry brine the chicken in the fridge for 30 minutes on a wire rack.",
@@ -45,12 +44,13 @@ const CrispyChickenThighsandKale = () => {
 
   return (
     <RecipeTemplate
-      title={recipeMetadata.title}
+      title={recipeMetadata.name}  // Pass the 'name' field
       description={recipeMetadata.description}
       prepTime={recipeMetadata.prepTime}
       cookTime={recipeMetadata.cookTime}
       servings={recipeMetadata.servings}
       ingredients={ingredients}
+      equipment={equipment}
       instructions={instructions}
     />
   );
