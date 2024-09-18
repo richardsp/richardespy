@@ -19,7 +19,7 @@ const CrispyChickenThighsandKale = () => {
     "1 lb kale, chopped",
     "1 large onion, diced",
     "2 cloves garlic, minced",
-    "1 lime, for finishing",
+    "1 lemon, for finishing",
     "Salt to taste",
     "Freshly ground black pepper to taste",
   ];
@@ -38,7 +38,7 @@ const CrispyChickenThighsandKale = () => {
     "Add the minced garlic to the onions and cook for 30 seconds to 1 minute, stirring to avoid burning, until fragrant.",
     "Pile the chopped kale into the skillet on top of the softened onions and garlic. Season lightly with salt and pepper. Stir and allow the kale to wilt for 2-3 minutes.",
     "Nestle the chicken thighs skin side up on top of the kale and transfer the skillet to the preheated oven. Roast for 15-20 minutes, until the chicken reaches an internal temperature of 165°F (75°C).",
-    "Remove the skillet from the oven and let it rest for a couple of minutes. Squeeze fresh lime juice over the chicken and kale before serving.",
+    "Remove the skillet from the oven and let it rest for a couple of minutes. Squeeze fresh lemon juice over the chicken and kale before serving.",
     "Serve the chicken thighs directly from the skillet, using tongs to stir and mix the kale and onions before plating.",
   ];
 
@@ -50,6 +50,8 @@ const CrispyChickenThighsandKale = () => {
       cookTime={recipeMetadata.cookTime}
       servings={recipeMetadata.servings}
       ingredients={ingredients}
+      imageSrc="/assets/crispychickenthighsandkale.jpeg"  // Replace with actual image path
+      imageAlt="Crispy Chicken Thighs and Kale"
       equipment={equipment}
       instructions={instructions}
     />
