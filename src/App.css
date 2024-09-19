@@ -7,7 +7,13 @@ body {
   color: #333;
 }
 
-/* Header */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
 header {
   background-color: #73999B;
   color: #fff;
@@ -22,7 +28,17 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* Navigation */
+.name-link {
+  color: inherit; /* Maintain current text color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+}
+
+.name-link:hover {
+  text-decoration: none; /* Keep it consistent on hover */
+}
+
+/* Navigation Styles */
 nav ul {
   list-style: none;
   padding: 0;
@@ -46,14 +62,7 @@ nav ul li a:hover {
   color: #828077;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Sections */
+/* Section Styles */
 .section {
   margin-bottom: 40px;
 }
@@ -64,6 +73,36 @@ nav ul li a:hover {
   padding-bottom: 10px;
   font-size: 1.8rem;
   text-transform: uppercase;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #73999B;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio img {
+    margin: 0 auto 20px;
+  }
 }
 
 /* Bio Section */
@@ -86,45 +125,7 @@ nav ul li a:hover {
   flex: 1;
 }
 
-/* Footer */
-footer {
-  background-color: #73999B;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0; /* Reduced padding for smaller footer */
-  font-size: 0.9rem; /* Smaller font size */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .bio {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .bio img {
-    margin: 0 auto 20px;
-  }
-}
-
-/* Recipe Image Styling */
-.recipe-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
-/* Scrollable Table Styles */
+/* Table Styles */
 .scrollable-table {
   width: 100%;
   border-collapse: collapse;
@@ -160,6 +161,14 @@ footer p {
   table-layout: fixed;
 }
 
+/* Recipe Image Styling */
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
 /* Responsive Recipe Image */
 @media (max-width: 768px) {
   .recipe-image {
@@ -168,20 +177,12 @@ footer p {
   }
 }
 
-/* Mouseover Effects */
-a:hover, tr:hover {
-  background-color: #828077;
-  color: white;
-}
-
-/* Container ensures image scaling within the content */
 .responsive-image-container {
   width: 100%;
-  max-width: 600px; /* You can adjust this to limit the image's max width */
+  max-width: 600px;
   margin: 0 auto; /* Centers the image */
 }
 
-/* The actual image gets scaled */
 .responsive-image {
   width: 100%;
   height: auto;
@@ -189,13 +190,61 @@ a:hover, tr:hover {
   object-fit: cover; /* Ensures aspect ratio is maintained */
 }
 
-/* Optional: Further mobile optimizations */
-@media (max-width: 768px) {
-  .responsive-image-container {
-    max-width: 100%;
-  }
+/* Hover Effects */
+a:hover, tr:hover {
+  background-color: #828077;
+  color: white;
+}
 
-  .responsive-image {
-    width: 100%;
-  }
+/* Resume Styles */
+.resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+.resume-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.resume-section-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.resume-job-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.resume-job-details {
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+.resume-job-responsibilities {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Download Link */
+.resume-download {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.resume-download-link {
+  font-size: 1.2em;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resume-download-link:hover {
+  text-decoration: underline;
 }

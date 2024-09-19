@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Resume.css'; // Import a CSS file for additional styling
+import '../App.css'; // Import a CSS file for additional styling
 const resumePDF = '/assets/Richard_Espy_Resume.pdf';
 
 const Resume = () => {
@@ -46,10 +46,10 @@ const Resume = () => {
       </section>
 
       <section>
-        <h2 onClick={toggleExperience} className="resume-collapse-header">
+        <h4 onClick={toggleExperience} className="resume-collapse-header">
           <span className={`resume-collapse-icon ${isExperienceCollapsed ? '' : 'rotate'}`}>▶</span> 
           {isExperienceCollapsed ? 'Show More Experience' : 'Hide Experience'}
-        </h2>
+        </h4>
         {!isExperienceCollapsed && (
           <div className="resume-collapsible-content">
             <h3 className="resume-job-title">QA Engineer</h3>
@@ -108,10 +108,10 @@ const Resume = () => {
       </section>
 
       <section>
-        <h2 onClick={toggleEducation} className="resume-collapse-header">
+        <h4 onClick={toggleEducation} className="resume-collapse-header">
           <span className={`resume-collapse-icon ${isEducationCollapsed ? '' : 'rotate'}`}>▶</span> 
           {isEducationCollapsed ? 'Show Education and Skills' : 'Hide Education and Skills'}
-        </h2>
+        </h4>
         {!isEducationCollapsed && (
           <div className="resume-collapsible-content">
             <h3 className="resume-job-title">Education / Skills</h3>
