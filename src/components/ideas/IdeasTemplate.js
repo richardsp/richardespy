@@ -24,3 +24,5 @@ const IdeasTemplate = ({ title, description, checklist }) => {
 };
 
 export default IdeasTemplate;
+
+
