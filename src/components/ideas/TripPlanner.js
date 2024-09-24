@@ -6,7 +6,7 @@ export const ideaMetadata = {
     description: (
       <>
         <p>When creating a multipart trip and/or a trip longer than an hour, it would be nice to be able to scroll through the trip by time, and add points of interest that way.</p>
-        <p>For example, if I'm driving from Los Angeles to San Francisco, I know that I'll want to stop and grab a bite about two hours into the trip. I would like to scroll my route by two hours, and then search in the area that I should be for a restaurant.</p>
+        <p>For example, if I'm driving from Los Angeles to San Francisco, I know that I'll want to stop and grab a bite about two hours into the trip. I would like to scroll my route by two hours,  then search in the area where I will be for a restaurant. The app should update the route and travel time appropriately.</p>
       </>
     ),
     link: '/ideas/tripplanner',
