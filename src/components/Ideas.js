@@ -17,7 +17,7 @@ const Ideas = () => {
   // Separate ideas by type
   const apps = ideasData.filter((idea) => idea.metadata.type === 'App');
   const stories = ideasData.filter((idea) => idea.metadata.type === 'Stories');
-  const investigations = ideasData.filter((idea) => idea.metadata.type === 'Investigations');
+  // const investigations = ideasData.filter((idea) => idea.metadata.type === 'Investigations');
 
   return (
     <section id="ideas" className="section">
@@ -31,7 +31,7 @@ const Ideas = () => {
       </p>
 
       {/* Apps Section */}
-      <h3>Apps</h3>
+      <h3>App Ideas</h3>
       <ul>
         {apps.map((idea) => (
           <li key={idea.metadata.title}>
@@ -41,7 +41,7 @@ const Ideas = () => {
       </ul>
 
       {/* Stories Section */}
-      <h3>Stories</h3>
+      <h3>Story Ideas</h3>
       <ul>
         {stories.map((idea) => (
           <li key={idea.metadata.title}>
@@ -51,14 +51,6 @@ const Ideas = () => {
       </ul>
 
       {/* Investigations Section */}
-      <h3>Investigations</h3>
-      <ul>
-        {investigations.map((idea) => (
-          <li key={idea.metadata.title}>
-            <Link to={idea.metadata.link}>{idea.metadata.title}</Link>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 };

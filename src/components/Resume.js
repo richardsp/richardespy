@@ -16,32 +16,33 @@ const Resume = () => {
       <section>
         <h2 className="resume-section-title">Summary</h2>
         <p className="resume-section-content">
-          Experienced Software QA professional specializing in software analysis and testing for Internet technologies. Strong advocate for quality, having developed change control processes, streamlined operations, improved product stability, and built QA teams from the ground up. Skilled in career planning and team growth.
+          Experienced Software QA Engineer passionate about continuous learning and deep product expertise. 
+          I seek a dynamic environment where I can directly impact product quality while expanding my knowledge 
+          in both technical and business aspects. A strong advocate for collaboration and team-driven success, 
+          particularly in environments that value individual challenges and team collaboration.
         </p>
       </section>
 
       <section>
         <h2 className="resume-section-title">Professional Experience</h2>
         
-        <h3 className="resume-job-title">Quality Assurance Engineer - Independent Contractor</h3>
-        <p className="resume-job-details">TruLite Health – Phoenix, Arizona - Remote (April 2023 – September 2023)</p>
+        <h3 className="resume-job-title">Quality Assurance Engineer (Independent Contractor)</h3>
+        <p className="resume-job-details">TruLite Health – Phoenix, AZ (Remote) | April 2023 – September 2023</p>
         <ul className="resume-job-responsibilities">
           <li>Tested Microsoft Azure-based health equity platform integrated with Epic EHR systems.</li>
-          <li>Conducted testing of responsive UI updates to guarantee a user-friendly device experience.</li>
-          <li>Validated security protocols, ensuring data privacy and protection.</li>
-          <li>Verified data accuracy and integrity using complex SQL queries.</li>
-          <li>Validated the Continuing Medical Education credit system for practitioners.</li>
+          <li>Ensured compliance with HIPAA requirements, preventing potential PII exposure.</li>
+          <li>Conducted testing of responsive UI updates for a seamless cross-device experience.</li>
+          <li>Verified data integrity using complex SQL queries, ensuring accuracy in health-related data.</li>
+          <li>Tested Continuing Medical Education credit system for practitioner needs.</li>
         </ul>
 
         <h3 className="resume-job-title">Senior Software Test Engineer</h3>
-        <p className="resume-job-details">Promenade Group – Santa Monica, California - Remote (February 2021 – March 2023)</p>
+        <p className="resume-job-details">Promenade Group – Santa Monica, CA (Remote) | February 2021 – March 2023</p>
         <ul className="resume-job-responsibilities">
-          <li>Tested Magento-based CRM e-commerce platforms for florists, restaurants, and liquor stores.</li>
-          <li>Verified functionality of new features and validated integration with existing features.</li>
-          <li>Collaborated with customer service and onboarding teams to resolve real-world issues.</li>
-          <li>Tested backend PHP architecture upgrade and validated ADA compliance implementation.</li>
-          <li>Tested internal APIs and multiple 3rd party integrations including Afterpay, customer.io, Delivery Solutions, and Salesforce Marketing Cloud.</li>
-          <li>Developed test plans and procedures and led multiple brainstorming sessions for new features.</li>
+          <li>Led the QA effort in achieving ADA compliance, ensuring an inclusive user experience.</li>
+          <li>Pivoted to compliance testing mid-project, delivering a fully compliant product on time.</li>
+          <li>Collaborated with customer service to drive feature improvements, reducing support costs.</li>
+          <li>Developed test plans for APIs and third-party integrations, including Afterpay and Salesforce.</li>
         </ul>
       </section>
 
@@ -53,56 +54,23 @@ const Resume = () => {
         {!isExperienceCollapsed && (
           <div className="resume-collapsible-content">
             <h3 className="resume-job-title">QA Engineer</h3>
-            <p className="resume-job-details">EZ Texting – Santa Monica, California (October 2018 – January 2021)</p>
+            <p className="resume-job-details">EZ Texting – Santa Monica, CA | October 2018 – January 2021</p>
             <ul className="resume-job-responsibilities">
-              <li>Tested web-based, transactional, telephony software.</li>
-              <li>Worked in an integrated development team responsible for all backend and end-user UI features.</li>
-              <li>Sole tester of an initiative for improving paid customer conversion that launched on schedule and bug-free.</li>
-              <li>Wrote SQL queries and executed manual and automated test plans.</li>
-              <li>Found and verified over 800 issues.</li>
-              <li>Set up test environments and seed data for product demos of new features.</li>
-              <li>Onboarded and trained new QA team members.</li>
-            </ul>
-
-            <h3 className="resume-job-title">Quality Assurance Engineer – Independent Contractor</h3>
-            <p className="resume-job-details">Steelhouse / HomeMe / Beachbody (March 2016 – September 2018)</p>
-            <ul className="resume-job-responsibilities">
-              <li>Tested web-based creative software and iOS/Android native mobile apps.</li>
-              <li>Led testing of Oracle database migration for content management and e-commerce systems.</li>
-              <li>Developed and executed test plans and test cases.</li>
-              <li>Managed external tester efforts and documented over 500 issues.</li>
-            </ul>
-
-            <h3 className="resume-job-title">Quality Assurance Lead</h3>
-            <p className="resume-job-details">The Portal Group / Toyota – Torrance, California (June 2015 – March 2016)</p>
-            <ul className="resume-job-responsibilities">
-              <li>Led testing of buyatoyota.com and associated automotive marketing websites.</li>
-              <li>Supported migration from internal servers to Amazon Web Services.</li>
-              <li>Coordinated allocation of testing resources across projects.</li>
+              <li>Spearheaded the QA process for a comprehensive website redesign.</li>
+              <li>Served as the sole QA responsible for front-end testing during a major redesign.</li>
+              <li>Authored SQL queries and executed manual and automated test plans.</li>
+              <li>Set up test environments and seed data for product demos and new feature testing.</li>
             </ul>
 
             <h3 className="resume-job-title">Manager, Quality Assurance</h3>
-            <p className="resume-job-details">TrueCar.com / Zag.com – Santa Monica, California (September 2006 – October 2014)</p>
+            <p className="resume-job-details">TrueCar.com / Zag.com – Santa Monica, CA | September 2006 – October 2014</p>
             <ul className="resume-job-responsibilities">
-              <li>Led a QA team for high-traffic e-commerce websites and mobile apps.</li>
-              <li>Mentored junior team members defining areas of expertise and career development.</li>
-              <li>Hired, tasked, and evaluated the offshore QA team, establishing clear communication and escalation plans that ensured they were productive throughout their engagement.</li>
-              <li>Acted as the first line of support for issues raised by customer service, partners, and end-users.</li>
-              <li>Transitioned team from waterfall to agile development.</li>
+              <li>Mentored and coached QA team members, guiding several through promotions.</li>
+              <li>Managed an offshore QA team, ensuring productivity and clear communication.</li>
+              <li>Transitioned the QA team from waterfall to agile methodologies.</li>
             </ul>
 
-            <h3 className="resume-job-title">Manager of Quality Assurance</h3>
-            <p className="resume-job-details">Internet Brands / CarsDirect.com – El Segundo, California (November 1999 – September 2006)</p>
-            <ul className="resume-job-responsibilities">
-              <li>Ensured on-time, on-budget delivery of website updates.</li>
-              <li>Recruited and mentored QA team.</li>
-              <li>Oversaw configuration management and deployment.</li>
-            </ul>
-
-            <h3 className="resume-job-title">Additional Experience</h3>
-            <p className="resume-job-details">Symantec/Peter Norton Group – Senior Quality Assurance Analyst (Beta Testing) / Program Specialist</p>
-            <p className="resume-job-details">New World Computing – Network Administrator / Graphic Designer</p>
-            <p className="resume-job-details">SOS Computers – Computer Sales</p>
+            {/* Additional experience can be similarly added */}
           </div>
         )}
       </section>
@@ -117,11 +85,9 @@ const Resume = () => {
             <h3 className="resume-job-title">Education / Skills</h3>
             <ul className="resume-job-responsibilities">
               <li>Education: Computer Science and Business Administration studies, Santa Monica College</li>
-              <li>Certifications: Certified Agile ScrumMaster, Certified Agile Scrum Product Owner, Black Box Software Testing (BBST) Software Testing Foundations</li>
-              <li>Courses: Selenium WebDriver with Java, Appium Mobile Automation testing, Playwright</li>
-              <li>Platforms: Android, iOS, Desktop OS, mobile web</li>
-              <li>Technologies: AWS, CI/CD, CSS, Gherkin, GitHub, HTML, JavaScript, MongoDB, Node, SQL, Zephyr</li>
-              <li>Applications: Adobe Commerce/Magento, Apple TestFlight, Android Studio, Chrome DevTools, Confluence, DB Visualizer, Docker, Eclipse, Google Analytics, Jenkins, JIRA, Oracle CRM Postman, Salesforce CRM, Selenium, SoapUI, Xcode, WebDriver</li>
+              <li>Certifications: Certified Agile ScrumMaster, Certified Agile Scrum Product Owner</li>
+              <li>Tools: Postman, Jira, Confluence, Jenkins, Docker, Selenium WebDriver, Appium</li>
+              <li>Platforms: iOS, Android, Microsoft Azure, Epic EHR</li>
             </ul>
           </div>
         )}
@@ -144,3 +110,4 @@ const Resume = () => {
 };
 
 export default Resume;
+ 
