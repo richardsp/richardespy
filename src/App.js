@@ -5,6 +5,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Resume from './components/Resume';
 import Cooking from './components/Cooking';
+import Travel from './components/Travel';
 import Ideas from './components/Ideas';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/cooking" element={<Cooking />} />
+          <Route path="/travel" element={<Travel />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/contact" element={<Contact />} />
 

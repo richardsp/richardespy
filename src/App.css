@@ -2,18 +2,13 @@
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 0 20px; /* Added padding to avoid edge clipping */
   background-color: #e8f0fe;
   color: #333;
+  padding-bottom: 100px; /* Extra space below the content */
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header Styles */
+/* Header */
 header {
   background-color: #73999B;
   color: #fff;
@@ -28,17 +23,7 @@ header h1 {
   letter-spacing: 2px;
 }
 
-.name-link {
-  color: inherit; /* Maintain current text color */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer;
-}
-
-.name-link:hover {
-  text-decoration: none; /* Keep it consistent on hover */
-}
-
-/* Navigation Styles */
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -62,7 +47,13 @@ nav ul li a:hover {
   color: #828077;
 }
 
-/* Section Styles */
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section */
 .section {
   margin-bottom: 40px;
 }
@@ -75,37 +66,7 @@ nav ul li a:hover {
   text-transform: uppercase;
 }
 
-/* Footer Styles */
-footer {
-  background-color: #73999B;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .bio {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .bio img {
-    margin: 0 auto 20px;
-  }
-}
-
-/* Bio Section */
+/* Bio */
 .bio {
   display: flex;
   flex-wrap: wrap;
@@ -125,7 +86,45 @@ footer p {
   flex: 1;
 }
 
-/* Table Styles */
+/* Footer */
+footer {
+  background-color: #73999B;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0; /* Reduced padding for smaller footer */
+  font-size: 0.9rem; /* Smaller font size */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .bio img {
+    margin: 0 auto 20px;
+  }
+}
+
+/* Recipe Image */
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Scrollable Table */
 .scrollable-table {
   width: 100%;
   border-collapse: collapse;
@@ -161,47 +160,64 @@ footer p {
   table-layout: fixed;
 }
 
-/* Recipe Image Styling */
-.recipe-image {
+/* Travel Map */
+.map-container {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 400px;
+  position: relative; /* Ensures tooltips position correctly */
+}
+
+.modal-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 20px auto;
+  margin: 10px 0;
 }
 
-/* Responsive Recipe Image */
-@media (max-width: 768px) {
-  .recipe-image {
-    padding: 0;
-    margin-bottom: 20px;
-  }
-}
-
-.responsive-image-container {
+/* Travel Table */
+.travel-table {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto; /* Centers the image */
+  margin: 20px 0;
+  border-collapse: collapse;
 }
 
-.responsive-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Ensures aspect ratio is maintained */
+.travel-table th, .travel-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
-/* Hover Effects */
+.travel-table th {
+  background-color: #f4f4f4;
+}
+
+.travel-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mouseover and Link Effects */
 a:hover, tr:hover {
   background-color: #828077;
   color: white;
 }
 
-/* Resume Styles */
+/* Link styling */
+.name-link {
+  color: inherit; /* Use current text color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+}
+
+.name-link:hover {
+  text-decoration: none; /* Keep it consistent on hover */
+}
+
+/* Resume */
 .resume-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  color: #333;
 }
 
 .resume-title {
