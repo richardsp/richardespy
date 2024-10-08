@@ -2,19 +2,19 @@
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
-  padding: 0 20px; /* Added padding for the body to avoid edge clipping */
+  padding: 0 20px;
   background-color: #e8f0fe;
   color: #333;
-  padding-bottom: 100px; /* Extra space below the content */
 }
 
-/* Header */
+/* Header Styles */
 header {
   background-color: #73999B;
   color: #fff;
   padding: 1.5rem 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 header h1 {
@@ -23,12 +23,31 @@ header h1 {
   letter-spacing: 2px;
 }
 
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  position: absolute;
+  top: 1.5rem;
+  right: 20px;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Navigation Links */
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Allows menu items to wrap on smaller screens */
   margin-top: 10px;
 }
 
@@ -47,233 +66,32 @@ nav ul li a:hover {
   color: #828077;
 }
 
-/* Main Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Mobile Menu */
+.menu {
+  display: none; /* Hidden by default */
 }
 
-/* Section */
-.section {
-  margin-bottom: 40px;
-}
-
-.section h2 {
-  color: #73999B;
-  border-bottom: 2px solid #73999B;
-  padding-bottom: 10px;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-}
-
-/* Bio */
-.bio {
+.menu.open {
   display: flex;
-  flex-wrap: wrap;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  flex-direction: column;
 }
 
-.bio img {
-  max-width: 200px;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.bio div {
-  flex: 1;
-}
-
-/* Footer */
-footer {
-  background-color: #73999B;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0; /* Reduced padding for smaller footer */
-  font-size: 0.9rem; /* Smaller font size */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .bio {
+  .hamburger {
+    display: flex; /* Show hamburger on small screens */
+  }
+
+  nav ul {
+    display: none; /* Hide the navigation by default */
+  }
+
+  .menu.open ul {
+    display: flex; /* Show the menu when open */
     flex-direction: column;
     text-align: center;
   }
 
-  .bio img {
-    margin: 0 auto 20px;
+  nav ul li {
+    margin: 10px 0; /* Add space between links in the hamburger menu */
   }
-
-  header h1 {
-    font-size: 2rem; /* Reduce the font size for mobile */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack the menu items vertically */
-  }
-
-  .map-container {
-    height: 300px; /* Adjust the height for smaller screens */
-    margin-bottom: 200px; /* Less margin for table space on mobile */
-  }
-}
-
-/* Recipe Image */
-.recipe-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
-/* Scrollable Table */
-.scrollable-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  table-layout: fixed;
-  border: 1px solid #828077;
-}
-
-.scrollable-table th, .scrollable-table td {
-  padding: 8px;
-  text-align: left;
-  border: 1px solid #828077;
-  word-wrap: break-word;
-}
-
-.scrollable-table thead {
-  background-color: #828077;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.scrollable-table tbody {
-  display: block;
-  height: 400px;
-  overflow-y: auto;
-}
-
-.scrollable-table tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
-/* Travel Map */
-.map-container {
-  width: 100%;
-  height: 500px;
-  margin-bottom: 400px; /* Larger space for table on desktop */
-  position: relative;
-}
-
-.modal-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px 0;
-}
-
-/* Travel Table */
-.travel-table {
-  width: 100%;
-  margin: 20px 0;
-  border-collapse: collapse;
-}
-
-.travel-table th, .travel-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.travel-table th {
-  background-color: #f4f4f4;
-}
-
-.travel-table tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Mouseover and Link Effects */
-a:hover, tr:hover {
-  background-color: #828077;
-  color: white;
-}
-
-/* Link styling */
-.name-link {
-  color: inherit; /* Use current text color */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer;
-}
-
-.name-link:hover {
-  text-decoration: none; /* Keep it consistent on hover */
-}
-
-/* Resume */
-.resume-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.resume-title {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-.resume-section-title {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.resume-job-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-bottom: 0.2em;
-}
-
-.resume-job-details {
-  font-style: italic;
-  margin-bottom: 0.5em;
-}
-
-.resume-job-responsibilities {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* Download Link */
-.resume-download {
-  text-align: center;
-  margin-top: 2em;
-}
-
-.resume-download-link {
-  font-size: 1.2em;
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.resume-download-link:hover {
-  text-decoration: underline;
 }
