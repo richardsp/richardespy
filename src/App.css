@@ -2,7 +2,7 @@
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
-  padding: 0 20px; /* Added padding to avoid edge clipping */
+  padding: 0 20px; /* Added padding for the body to avoid edge clipping */
   background-color: #e8f0fe;
   color: #333;
   padding-bottom: 100px; /* Extra space below the content */
@@ -23,12 +23,12 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allows menu items to wrap on smaller screens */
   margin-top: 10px;
 }
 
@@ -110,9 +110,22 @@ footer p {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .bio img {
     margin: 0 auto 20px;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Reduce the font size for mobile */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack the menu items vertically */
+  }
+
+  .map-container {
+    height: 300px; /* Adjust the height for smaller screens */
+    margin-bottom: 200px; /* Less margin for table space on mobile */
   }
 }
 
@@ -164,8 +177,8 @@ footer p {
 .map-container {
   width: 100%;
   height: 500px;
-  margin-bottom: 400px;
-  position: relative; /* Ensures tooltips position correctly */
+  margin-bottom: 400px; /* Larger space for table on desktop */
+  position: relative;
 }
 
 .modal-image {
