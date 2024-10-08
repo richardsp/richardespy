@@ -33,8 +33,8 @@ const Travel = () => {
   };
 
   return (
-    <div>
-      <h1>My Travel Map</h1>
+    <section id="travel" className="section">
+      <h2>My Travel Map</h2>
       <div className="map-container">
         <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
           <Geographies geography={geoUrl}>
@@ -93,7 +93,7 @@ const Travel = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 
