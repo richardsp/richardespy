@@ -55,7 +55,7 @@ function MeatyMeatChili() {
       prepTime="30 minutes"
       cookTime="6 to 10 hours"
       servings="8-10"
-      imageSrc="/assets/meatymeatchili.jpg"  // Replace with actual image path
+      imageSrc="/assets/cooking/meatymeatchili.jpg"  // Replace with actual image path
       imageAlt="Meaty Meat Chili"
       ingredients={ingredients}
       equipment={equipment}

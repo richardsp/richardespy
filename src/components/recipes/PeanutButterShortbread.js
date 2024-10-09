@@ -40,7 +40,7 @@ function PeanutButterShortbread() {
       title="Peanut Butter and Nutella Swirl Sandwich Shortbread Cookies"
       ingredients={ingredients}
       instructions={instructions}
-      imageSrc="/assets/peanutbuttershortbread.jpg" 
+      imageSrc="/assets/cooking/peanutbuttershortbread.jpg" 
       imageAlt="Peanut Butter and Nutella Swirl Sandwich Shortbread Cookies"
     />
   );

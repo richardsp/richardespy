@@ -44,7 +44,7 @@ const ChickenRice = () => {
       'Finish: Once the rice is done, open the rice cooker and gently fluff the rice and chicken together. Add the frozen peas now if using and close the rice cooker for 5 more minutes to allow the peas to warm through.',
       'Garnish and serve: Stir in the green onions and serve.'
     ],
-    imageSrc: '/assets/chickenrice.jpg', // Ensure the path is correct or remove if not using
+    imageSrc: '/assets/cooking/chickenrice.jpg', // Ensure the path is correct or remove if not using
     imageAlt: 'Chicken Rice'
   };
 

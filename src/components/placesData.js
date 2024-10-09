@@ -1,3 +1,11 @@
+// Format for each place in placesVisited array:
+// {
+//   name: 'Location Name',           // The name of the city, state, or country
+//   coordinates: [longitude, latitude], // Array with the coordinates in [longitude, latitude] format
+//   description: 'Short description of the place',  // Optional: A brief description of the location
+//   image: 'path/to/image.jpg'       // Optional: Path or URL to an image representing the location
+// }
+
 export const placesVisited = [
     { name: 'Los Angeles', coordinates: [-118.2437, 34.0522], description: '' },
     { name: 'Las Vegas', coordinates: [-115.1398, 36.1699], description: '' },

@@ -12,7 +12,7 @@ export const recipeMetadata = {
   prepTime: '15 minutes',
   cookTime: '30 minutes',
   servings: '4-6',
-  imageSrc: '/assets/butterchicken.jpeg', // Ensure the path is correct or adjust accordingly
+  imageSrc: '/assets/cooking/butterchicken.jpeg', // Ensure the path is correct or adjust accordingly
   imageAlt: 'Butter Chicken',
 };
 

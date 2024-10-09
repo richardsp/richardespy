@@ -46,7 +46,7 @@ const ChocolateChipCookies = () => {
       "Cool: Let the cookies cool on the baking sheet for about 5 minutes before transferring them to a wire rack to cool completely.",
       "Tip: Keep unbaked cookie dough in the fridge while waiting to bake the next batch. Do not place dough on a hot cookie sheet."
     ],
-    imageSrc: '/assets/chocolatechipcookies.jpeg',  // Ensure this image is available
+    imageSrc: '/assets/cooking/chocolatechipcookies.jpeg',  // Ensure this image is available
     imageAlt: 'Chocolate Chip Cookies'
   };
 

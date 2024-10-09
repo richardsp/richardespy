@@ -50,7 +50,7 @@ const CrispyChickenThighsandKale = () => {
       cookTime={recipeMetadata.cookTime}
       servings={recipeMetadata.servings}
       ingredients={ingredients}
-      imageSrc="/assets/crispychickenthighsandkale.jpeg"  // Replace with actual image path
+      imageSrc="/assets/cooking/crispychickenthighsandkale.jpeg"  // Replace with actual image path
       imageAlt="Crispy Chicken Thighs and Kale"
       equipment={equipment}
       instructions={instructions}

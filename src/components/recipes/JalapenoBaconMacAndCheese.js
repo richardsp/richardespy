@@ -48,7 +48,7 @@ function JalapenoBaconMacAndCheese() {
       prepTime="30 minutes"
       cookTime="40 minutes"
       servings="4-6"
-      imageSrc="/assets/jalapenobaconmacandcheese.jpeg"  // Replace with actual image path
+      imageSrc="/assets/cooking/jalapenobaconmacandcheese.jpeg"  // Replace with actual image path
       imageAlt="Jalapeno Bacon Mac & Cheese"
       ingredients={ingredients}
       instructions={instructions}

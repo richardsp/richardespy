@@ -43,7 +43,7 @@ function CoffeeToffeeIceCream() {
       prepTime="20 minutes"
       cookTime="30 minutes + chilling time"
       servings="4"
-      imageSrc="/assets/bbctic.jpeg"
+      imageSrc="/assets/cooking/bbctic.jpeg"
       imageAlt="Brown Butter Coffee Toffee Ice Cream"
       ingredients={ingredients}
       equipment={equipment}

@@ -47,7 +47,7 @@ function DrunkenNoodles() {
       prepTime="20 minutes"
       cookTime="30 minutes"
       servings="4"
-      imageSrc="/assets/drunkennoodles.jpg"
+      imageSrc="/assets/cooking/drunkennoodles.jpg"
       imageAlt="Drunken Noodles"
       ingredients={ingredients}
       sauceIngredients={sauceIngredients}  // Optional if your RecipeTemplate supports it

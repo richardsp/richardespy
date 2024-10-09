@@ -39,7 +39,7 @@ function Bread() {
       prepTime="1 hour + proofing time"
       cookTime="20 minutes"
       servings="6 loaves (140g each)"
-      imageSrc="/assets/bread.jpg"  // Adjust this path if necessary
+      imageSrc="/assets/cooking/bread.jpg"  // Adjust this path if necessary
       imageAlt="Freshly baked bread"
       ingredients={ingredients}
       instructions={instructions}
