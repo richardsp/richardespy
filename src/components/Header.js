@@ -8,6 +8,10 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header>
       <h1>
@@ -16,20 +20,20 @@ function Header() {
 
       {/* Hamburger Icon */}
       <div className="hamburger" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
       </div>
 
       {/* Navigation Links */}
       <nav className={menuOpen ? 'menu open' : 'menu'}>
         <ul>
-          <li><Link to="/">About</Link></li>
-          <li><Link to="/resume">Resume</Link></li>
-          <li><Link to="/cooking">Cooking</Link></li>
-          <li><Link to="/travel">Travel</Link></li>
-          <li><Link to="/ideas">Ideas</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/resume" onClick={closeMenu}>Resume</Link></li>
+          <li><Link to="/cooking" onClick={closeMenu}>Cooking</Link></li>
+          <li><Link to="/travel" onClick={closeMenu}>Travel</Link></li>
+          <li><Link to="/ideas" onClick={closeMenu}>Ideas</Link></li>
+          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
       </nav>
     </header>

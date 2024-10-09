@@ -8,7 +8,7 @@ export const recipeMetadata = {
   link: '/recipes/friedeggplant',
   made: true,
   keeper: true,
-  description: 'I went to Japan House for an interesting discussion about cooking is done in one of the monasteries, and had the most amazing fried eggplant. I tracked down the chef, and, using my pidgin Japanese, got him to write down the recipe for me.',
+  description: 'I went to Japan House for an interesting discussion about cooking is done in one of the monasteries, and had the most amazing fried eggplant. I tracked down the chef, and using my pidgin Japanese, got him to write down the recipe for me.',
 };
 
 const FriedEggplant = () => {
