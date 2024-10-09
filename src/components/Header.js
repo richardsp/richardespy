@@ -16,9 +16,9 @@ function Header() {
 
       {/* Hamburger Icon */}
       <div className="hamburger" onClick={toggleMenu}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
       </div>
 
       {/* Navigation Links */}

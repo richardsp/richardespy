@@ -5,9 +5,10 @@ body {
   padding: 0 20px;
   background-color: #e8f0fe;
   color: #333;
+  padding-bottom: 100px; /* Extra space below the content */
 }
 
-/* Header Styles */
+/* Header */
 header {
   background-color: #73999B;
   color: #fff;
@@ -23,37 +24,13 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  position: absolute;
-  top: 1.5rem;
-  left: 20px; /* Left-align the hamburger icon */
-}
-
-.hamburger .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-/* Navigation Styles */
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
-  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows menu items to wrap on smaller screens */
+  margin-top: 10px;
 }
 
 nav ul li {
@@ -71,39 +48,26 @@ nav ul li a:hover {
   color: #828077;
 }
 
-/* Mobile Menu */
-.menu {
-  display: none; /* Hidden by default */
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.menu.open {
-  display: flex; /* Show menu when open */
-  flex-direction: column;
-  align-items: center;
+/* Section */
+.section {
+  margin-bottom: 40px;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* Show hamburger on small screens */
-  }
-
-  nav ul {
-    display: none; /* Hide the navigation by default */
-  }
-
-  .menu.open {
-    display: flex; /* Show the menu when open */
-    flex-direction: column;
-    text-align: center;
-    width: 100%; /* Full width for mobile */
-  }
-
-  nav ul li {
-    margin: 10px 0; /* Space between links in the hamburger menu */
-  }
+.section h2 {
+  color: #73999B;
+  border-bottom: 2px solid #73999B;
+  padding-bottom: 10px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
 }
 
-/* Bio Section */
+/* Bio */
 .bio {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +75,7 @@ nav ul li a:hover {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .bio img {
@@ -121,23 +86,116 @@ nav ul li a:hover {
 
 .bio div {
   flex: 1;
+  margin-top: 20px;
 }
 
-/* Mobile-specific Bio Image Styling */
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  position: absolute;
+  top: 1.5rem;
+  left: 20px; /* Left-align the hamburger */
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Navigation Links for Desktop */
+nav {
+  text-align: center; /* Center the navigation links */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: inline-block; /* Inline block to allow centering */
+  margin: 10px auto 0; /* Centered margin */
+}
+
+nav ul li {
+  display: inline-block; /* Make the list items inline */
+  margin: 0 20px; /* Slightly increase space between links */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem; /* Make font size larger */
+  font-weight: bold; /* Make links bold */
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #828077;
+}
+
+/* Mobile Menu */
+.menu {
+  display: none;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
-  .bio {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu.open ul {
+    display: flex;
     flex-direction: column;
     text-align: center;
   }
 
-  .bio img {
-    margin: 0 auto 20px;
-    max-width: 150px; /* Adjust image size on mobile */
-    height: auto;
+  nav ul li {
+    margin: 10px 0;
   }
 }
 
-/* Footer Styles */
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide the hamburger on larger screens */
+  }
+
+  nav ul {
+    display: inline-block; /* Ensure the nav is inline for centering */
+  }
+
+  .menu {
+    display: flex; /* Ensure the desktop menu is always visible */
+  }
+
+  .menu.open ul {
+    display: none; /* Make sure the mobile version doesn't interfere */
+  }
+
+  nav ul li {
+    margin: 0 30px; /* Increase space between items on desktop */
+  }
+
+  nav ul li a {
+    font-size: 1.5rem; /* Larger text size for desktop */
+    font-weight: bold; /* Bold text for desktop */
+  }
+}
+
+/* Footer */
 footer {
   background-color: #73999B;
   color: #fff;
@@ -153,4 +211,177 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio img {
+    margin: 0 auto 20px;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Reduce the font size for mobile */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack the menu items vertically */
+  }
+
+  .map-container {
+    height: 300px; /* Adjust the height for smaller screens */
+    margin-bottom: 200px; /* Less margin for table space on mobile */
+  }
+}
+
+/* Recipe Image */
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Scrollable Table */
+.scrollable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  table-layout: fixed;
+  border: 1px solid #828077;
+}
+
+.scrollable-table th, .scrollable-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #828077;
+  word-wrap: break-word;
+}
+
+.scrollable-table thead {
+  background-color: #828077;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.scrollable-table tbody {
+  display: block;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.scrollable-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Travel Map */
+.map-container {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 400px; /* Larger space for table on desktop */
+  position: relative;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+/* Travel Table */
+.travel-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+.travel-table th, .travel-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.travel-table th {
+  background-color: #f4f4f4;
+}
+
+.travel-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mouseover and Link Effects */
+a:hover, tr:hover {
+  background-color: #828077;
+  color: white;
+}
+
+/* Link styling */
+.name-link {
+  color: inherit; /* Use current text color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+}
+
+.name-link:hover {
+  text-decoration: none; /* Keep it consistent on hover */
+}
+
+/* Resume */
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resume-title {
+  font-size: 2em;
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.resume-section-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.resume-job-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.resume-job-details {
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+.resume-job-responsibilities {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Download Link */
+.resume-download {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.resume-download-link {
+  font-size: 1.2em;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resume-download-link:hover {
+  text-decoration: underline;
 }
