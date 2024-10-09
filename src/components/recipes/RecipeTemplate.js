@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingredients, instructions, equipment, imageSrc, imageAlt }) => {
   const [imageError, setImageError] = useState(false);
@@ -54,7 +55,8 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
         ))}
       </ol>
 
-      <a href="/cooking">Back to Cooking</a>
+      {/* Use Link for client-side navigation */}
+      <Link to="/cooking">Back to Cooking</Link>
     </section>
   );
 };
