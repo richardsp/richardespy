@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
   const imageFolder = '/assets/about/';
-  const imageCount = 5; // Set the total number of profile images you have, adjust this as needed
+  const imageCount = 4; // Set the total number of profile images you have, adjust this as needed
   const imageFormat = '.jpg';
 
   const profileImages = Array.from({ length: imageCount }, (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`);
