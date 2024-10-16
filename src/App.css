@@ -254,10 +254,28 @@ footer p {
 
 /* Recipe Image */
 .recipe-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  max-width: 100%; /* Ensures the image does not exceed its container's width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Center the image */
   margin: 20px auto;
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Ensure the parent container is flexible */
+.container,
+.section {
+  width: 100%; /* Ensure the container is 100% of the available width */
+  max-width: 100%; /* Prevent container from being larger than the screen width */
+  box-sizing: border-box; /* Include padding and borders in the width calculations */
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .recipe-image {
+    width: 100%; /* Force the image to take up the full width of its container */
+    max-width: none; /* Remove any max-width restriction */
+    margin: 15px auto; /* Reduce margin for smaller screens */
+  }
 }
 
 /* Scrollable Table */
