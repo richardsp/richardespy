@@ -66,11 +66,11 @@ nav ul li a:hover {
   height: 24px;
   position: absolute;
   top: 1.5rem;
-  left: 20px;
+  left: 10px;
 }
 
 .hamburger .bar {
-  width: 30px;
+  width: 28px;
   height: 3px;
   background-color: #fff;
   border-radius: 5px;
