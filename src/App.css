@@ -16,6 +16,9 @@ header {
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content in header */
 }
 
 header h1 {
@@ -24,12 +27,17 @@ header h1 {
   letter-spacing: 2px;
 }
 
+/* Navigation */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center navigation links */
+}
+
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows menu items to wrap on smaller screens */
   margin-top: 10px;
 }
 
@@ -40,12 +48,125 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #828077;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  position: absolute;
+  top: 1.5rem;
+  left: 20px;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Ensure the menu is always visible on desktop */
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important; /* Ensure flex is active on desktop */
+    justify-content: center; /* Center the links horizontally */
+    gap: 30px; /* Space between links */
+  }
+
+  /* Hide the hamburger icon on larger screens */
+  .hamburger {
+    display: none;
+  }
+
+  /* Ensure links are inline */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+}
+
+/* Mobile Menu - Display when toggled */
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* Hidden by default */
+  }
+
+  .menu.open {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu.open ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Reduce the font size for mobile */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide the hamburger on larger screens */
+  }
+
+  nav ul {
+    display: flex; /* Flexbox to center */
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0 30px; /* Increase space between items on desktop */
+  }
+
+  nav ul li a {
+    font-size: 1.5rem; /* Larger text size for desktop */
+  }
 }
 
 /* Main Container */
@@ -67,10 +188,8 @@ nav ul li a:hover {
   text-transform: uppercase;
 }
 
-/* Bio */
+/* Updated h1 for "About Me" */
 .bio {
-  display: flex;
-  flex-wrap: wrap;
   background-color: #fff;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -80,119 +199,39 @@ nav ul li a:hover {
 
 .bio img {
   max-width: 200px;
-  margin-right: 20px;
-  border-radius: 50%;
+  border-radius: 5%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
-.bio div {
-  flex: 1;
-  margin-top: 20px;
+.bio h1 {
+  color: #73999B;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #73999B; /* Underline the h1 */
+  margin-bottom: 10px;
+  display: inline-block;
+  width: calc(100% - 265px); /* Full width minus the image width and margin */
 }
 
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  position: absolute;
-  top: 1.5rem;
-  left: 20px; /* Left-align the hamburger */
+.bio-content p {
+  margin-top: 10px;
 }
 
-.hamburger .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 5px;
+.bio-content p:first-of-type {
+  clear: none;
+  margin-top: 0;
 }
 
-/* Navigation Links for Desktop */
-nav {
-  text-align: center; /* Center the navigation links */
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: inline-block; /* Inline block to allow centering */
-  margin: 10px auto 0; /* Centered margin */
-}
-
-nav ul li {
-  display: inline-block; /* Make the list items inline */
-  margin: 0 20px; /* Slightly increase space between links */
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.3rem; /* Make font size larger */
-  font-weight: bold; /* Make links bold */
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #828077;
-}
-
-/* Mobile Menu */
-.menu {
-  display: none;
-}
-
-.menu.open {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .menu.open ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}
-
-/* Desktop Styles */
-@media (min-width: 769px) {
-  .hamburger {
-    display: none; /* Hide the hamburger on larger screens */
-  }
-
-  nav ul {
-    display: inline-block; /* Ensure the nav is inline for centering */
-  }
-
-  .menu {
-    display: flex; /* Ensure the desktop menu is always visible */
-  }
-
-  .menu.open ul {
-    display: none; /* Make sure the mobile version doesn't interfere */
-  }
-
-  nav ul li {
-    margin: 0 30px; /* Increase space between items on desktop */
-  }
-
-  nav ul li a {
-    font-size: 1.5rem; /* Larger text size for desktop */
-    font-weight: bold; /* Bold text for desktop */
-  }
+.bio-content p:nth-of-type(n+2) {
+  clear: both;
+  margin-top: 10px;
 }
 
 /* Footer */
@@ -213,39 +252,6 @@ footer p {
   margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .bio {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .bio img {
-    margin: 0 auto 20px;
-  }
-
-  header h1 {
-    font-size: 2rem; /* Reduce the font size for mobile */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack the menu items vertically */
-  }
-
-  .map-container {
-    height: 300px; /* Adjust the height for smaller screens */
-    margin-bottom: 200px; /* Less margin for table space on mobile */
-  }
-}
-
-/* Ensure images are responsive */
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Centers the image horizontally */
-}
-
 /* Recipe Image */
 .recipe-image {
   max-width: 100%;
@@ -263,7 +269,8 @@ footer p {
   border: 1px solid #828077;
 }
 
-.scrollable-table th, .scrollable-table td {
+.scrollable-table th,
+.scrollable-table td {
   padding: 8px;
   text-align: left;
   border: 1px solid #828077;
@@ -294,8 +301,16 @@ footer p {
 .map-container {
   width: 100%;
   height: 500px;
-  margin-bottom: 400px; /* Larger space for table on desktop */
+  margin-bottom: 400px;
   position: relative;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+    margin-bottom: 50px; /* Reduce margin between map and table */
+  }
 }
 
 .modal-image {
@@ -305,42 +320,22 @@ footer p {
   margin: 10px 0;
 }
 
-/* Travel Table */
-.travel-table {
-  width: 100%;
-  margin: 20px 0;
-  border-collapse: collapse;
-}
-
-.travel-table th, .travel-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.travel-table th {
-  background-color: #f4f4f4;
-}
-
-.travel-table tr:hover {
-  background-color: #f1f1f1;
-}
-
 /* Mouseover and Link Effects */
-a:hover, tr:hover {
+a:hover,
+tr:hover {
   background-color: #828077;
   color: white;
 }
 
-/* Link styling */
+/* Link Styling */
 .name-link {
-  color: inherit; /* Use current text color */
-  text-decoration: none; /* Remove underline */
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
 .name-link:hover {
-  text-decoration: none; /* Keep it consistent on hover */
+  text-decoration: none;
 }
 
 /* Resume */
@@ -392,4 +387,93 @@ a:hover, tr:hover {
 
 .resume-download-link:hover {
   text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal-title {
+  color: #73999B;
+  border-bottom: 2px solid #73999B;
+  padding-bottom: 10px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.modal-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-close-button {
+  background-color: #73999B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.modal-close-button:hover {
+  background-color: #828077;
+}
+
+.modal-close-button:focus {
+  outline: none;
+}
+
+/* Travel Table */
+.travel-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.travel-table th,
+.travel-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #828077;
+  color: #333;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.travel-table th {
+  background-color: #73999B;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.travel-table td {
+  background-color: #f9f9f9;
+}
+
+/* Mouseover and Hover Effects for Table Rows */
+.travel-table tr:hover td {
+  background-color: #73999B;
+  color: #fff;
+  cursor: pointer;
+}
+
+.travel-table tr:hover th {
+  background-color: #828077;
 }

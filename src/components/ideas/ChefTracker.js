@@ -2,7 +2,7 @@ import React from 'react';
 import IdeasTemplate from './IdeasTemplate';
 
 export const ideaMetadata = {
-  title: 'Chef Tracker',
+  title: 'Chef Tracker - Find TV chefs restaurants and appearances',
   description: `Chef Tracker is an app that allows users to track chefs featured on various TV cooking shows. Users can search for chefs, restaurants, standout dishes, and more. This app will help food enthusiasts keep track of their favorite chefs, discover new talent, and visit their restaurants.`,
   checklist: [
     'Search for chefs by TV show, name, city, or restaurant',
