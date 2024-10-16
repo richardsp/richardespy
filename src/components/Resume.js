@@ -29,7 +29,7 @@ const Resume = () => {
         <h2 className="resume-section-title">Professional Experience</h2>
         
         <h3 className="resume-job-title">Quality Assurance Engineer (Independent Contractor)</h3>
-        <p className="resume-job-details">TruLite Health – Phoenix, AZ (Remote)</p>
+        <p className="resume-job-details">TruLite Health – Phoenix, AZ (Remote) | April 2023 – September 2023</p>
         <ul className="resume-job-responsibilities">
           <li>Tested Microsoft Azure-based health equity platform integrated with Epic EHR systems.</li>
           <li>Ensured compliance with HIPAA requirements, preventing potential PII exposure.</li>
@@ -39,7 +39,7 @@ const Resume = () => {
         </ul>
 
         <h3 className="resume-job-title">Senior Software Test Engineer</h3>
-        <p className="resume-job-details">Promenade Group – Santa Monica, CA</p>
+        <p className="resume-job-details">Promenade Group – Santa Monica, CA (Remote) | February 2021 – March 2023</p>
         <ul className="resume-job-responsibilities">
           <li>Led the QA effort in achieving ADA compliance, ensuring an inclusive user experience.</li>
           <li>Pivoted to compliance testing mid-project, delivering a fully compliant product on time.</li>
@@ -56,28 +56,12 @@ const Resume = () => {
         {!isExperienceCollapsed && (
           <div className="resume-collapsible-content">
             <h3 className="resume-job-title">QA Engineer</h3>
-            <p className="resume-job-details">EZ Texting – Santa Monica, CA</p>
+            <p className="resume-job-details">EZ Texting – Santa Monica, CA | October 2018 – January 2021</p>
             <ul className="resume-job-responsibilities">
               <li>Spearheaded the QA process for a comprehensive website redesign.</li>
               <li>Served as the sole QA responsible for front-end testing during a major redesign.</li>
               <li>Authored SQL queries and executed manual and automated test plans.</li>
               <li>Set up test environments and seed data for product demos and new feature testing.</li>
-            </ul>
-
-            <h3 className="resume-job-title">Manager, Quality Assurance</h3>
-            <p className="resume-job-details">TrueCar.com / Zag.com – Santa Monica, CA | September 2006 – October 2014</p>
-            <ul className="resume-job-responsibilities">
-              <li>Mentored and coached QA team members, guiding several through promotions.</li>
-              <li>Managed an offshore QA team, ensuring productivity and clear communication.</li>
-              <li>Transitioned the QA team from waterfall to agile methodologies.</li>
-            </ul>
-
-            <h3 className="resume-job-title">Manager, Quality Assurance</h3>
-            <p className="resume-job-details">TrueCar.com / Zag.com – Santa Monica, CA | September 2006 – October 2014</p>
-            <ul className="resume-job-responsibilities">
-              <li>Mentored and coached QA team members, guiding several through promotions.</li>
-              <li>Managed an offshore QA team, ensuring productivity and clear communication.</li>
-              <li>Transitioned the QA team from waterfall to agile methodologies.</li>
             </ul>
 
             <h3 className="resume-job-title">Manager, Quality Assurance</h3>

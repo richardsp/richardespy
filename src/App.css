@@ -1,28 +1,42 @@
+:root {
+  --primary-color: #73999B;
+  --hover-color: #828077;
+  --text-color: #333;
+  --background-color: #e8f0fe;
+  --font-size-large: 2.5rem;
+  --font-size-medium: 1.8rem;
+  --font-size-small: 1.3rem;
+}
+
 /* General Styles */
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0 20px;
-  background-color: #e8f0fe;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding-bottom: 100px; /* Extra space below the content */
+}
+
+h1, h2, .resume-title, .resume-section-title, .modal-title {
+  text-transform: uppercase;
+  color: var(--primary-color);
 }
 
 /* Header */
 header {
-  background-color: #73999B;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 1.5rem 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content in header */
+  align-items: center;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-large);
   margin: 0;
   letter-spacing: 2px;
 }
@@ -31,7 +45,7 @@ header h1 {
 nav {
   width: 100%;
   display: flex;
-  justify-content: center; /* Center navigation links */
+  justify-content: center;
 }
 
 nav ul {
@@ -48,13 +62,13 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: var(--font-size-small);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #828077;
+  color: var(--hover-color);
 }
 
 /* Hamburger Icon */
@@ -76,54 +90,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Ensure the menu is always visible on desktop */
-@media (min-width: 769px) {
-  .menu {
-    display: flex !important; /* Ensure flex is active on desktop */
-    justify-content: center; /* Center the links horizontally */
-    gap: 30px; /* Space between links */
-  }
-
-  /* Hide the hamburger icon on larger screens */
-  .hamburger {
-    display: none;
-  }
-
-  /* Ensure links are inline */
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 0 15px;
-  }
-
-  nav ul li a {
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-}
-
-/* Mobile Menu - Display when toggled */
-@media (max-width: 768px) {
-  .menu {
-    display: none; /* Hidden by default */
-  }
-
-  .menu.open {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* Mobile Styles */
+/* Mobile & Desktop Styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -144,28 +111,47 @@ nav ul li a:hover {
   }
 
   header h1 {
-    font-size: 2rem; /* Reduce the font size for mobile */
+    font-size: 2rem; /* Smaller font for mobile */
+  }
+
+  .recipe-image {
+    width: 100%;
+    margin: 15px auto;
+  }
+
+  .map-container {
+    height: 300px;
+    margin-bottom: 50px;
   }
 }
 
-/* Desktop Styles */
 @media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    justify-content: center;
+    gap: 30px;
+  }
+
   .hamburger {
-    display: none; /* Hide the hamburger on larger screens */
+    display: none;
   }
 
   nav ul {
-    display: flex; /* Flexbox to center */
+    display: flex;
     justify-content: center;
     padding: 0;
   }
 
   nav ul li {
-    margin: 0 30px; /* Increase space between items on desktop */
+    margin: 0 30px;
   }
 
   nav ul li a {
-    font-size: 1.5rem; /* Larger text size for desktop */
+    font-size: 1.5rem;
+  }
+
+  .map-container {
+    height: 500px;
   }
 }
 
@@ -175,20 +161,17 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-/* Section */
 .section {
   margin-bottom: 40px;
 }
 
 .section h2 {
-  color: #73999B;
-  border-bottom: 2px solid #73999B;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 10px;
-  font-size: 1.8rem;
-  text-transform: uppercase;
+  font-size: var(--font-size-medium);
 }
 
-/* Updated h1 for "About Me" */
+/* Bio Section */
 .bio {
   background-color: #fff;
   padding: 20px;
@@ -209,15 +192,13 @@ nav ul li a:hover {
 }
 
 .bio h1 {
-  color: #73999B;
-  font-size: 1.8rem;
-  text-transform: uppercase;
+  font-size: var(--font-size-medium);
   margin-top: 0;
   padding-bottom: 10px;
-  border-bottom: 2px solid #73999B; /* Underline the h1 */
+  border-bottom: 2px solid var(--primary-color);
   margin-bottom: 10px;
   display: inline-block;
-  width: calc(100% - 265px); /* Full width minus the image width and margin */
+  width: calc(100% - 265px);
 }
 
 .bio-content p {
@@ -236,7 +217,7 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background-color: #73999B;
+  background-color: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 10px 0;
@@ -254,28 +235,11 @@ footer p {
 
 /* Recipe Image */
 .recipe-image {
-  max-width: 100%; /* Ensures the image does not exceed its container's width */
-  height: auto; /* Maintain the aspect ratio */
-  display: block; /* Center the image */
+  max-width: 100%;
+  height: auto;
+  display: block;
   margin: 20px auto;
-  border-radius: 8px; /* Optional rounded corners */
-}
-
-/* Ensure the parent container is flexible */
-.container,
-.section {
-  width: 100%; /* Ensure the container is 100% of the available width */
-  max-width: 100%; /* Prevent container from being larger than the screen width */
-  box-sizing: border-box; /* Include padding and borders in the width calculations */
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .recipe-image {
-    width: 100%; /* Force the image to take up the full width of its container */
-    max-width: none; /* Remove any max-width restriction */
-    margin: 15px auto; /* Reduce margin for smaller screens */
-  }
+  border-radius: 8px;
 }
 
 /* Scrollable Table */
@@ -284,19 +248,18 @@ footer p {
   border-collapse: collapse;
   margin: 20px 0;
   table-layout: fixed;
-  border: 1px solid #828077;
+  border: 1px solid var(--hover-color);
 }
 
-.scrollable-table th,
-.scrollable-table td {
+.scrollable-table th, .scrollable-table td {
   padding: 8px;
   text-align: left;
-  border: 1px solid #828077;
+  border: 1px solid var(--hover-color);
   word-wrap: break-word;
 }
 
 .scrollable-table thead {
-  background-color: #828077;
+  background-color: var(--hover-color);
   color: white;
   position: sticky;
   top: 0;
@@ -318,17 +281,8 @@ footer p {
 /* Travel Map */
 .map-container {
   width: 100%;
-  height: 500px;
-  margin-bottom: 400px;
   position: relative;
   z-index: -1;
-}
-
-@media (max-width: 768px) {
-  .map-container {
-    height: 300px;
-    margin-bottom: 50px; /* Reduce margin between map and table */
-  }
 }
 
 .modal-image {
@@ -338,103 +292,18 @@ footer p {
   margin: 10px 0;
 }
 
-/* Mouseover and Link Effects */
-a:hover,
-tr:hover {
-  background-color: #828077;
-  color: white;
-}
-
-/* Link Styling */
 .name-link {
-  color: inherit;
+  color: #ffff;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .name-link:hover {
   text-decoration: none;
 }
 
-/* Resume */
-.resume-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.resume-title {
-  font-size: 2em;
-  text-align: left;
-  margin-bottom: 1em;
-}
-
-.resume-section-title {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.resume-job-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-bottom: 0.2em;
-}
-
-.resume-job-details {
-  font-style: italic;
-  margin-bottom: 0.5em;
-}
-
-.resume-job-responsibilities {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* Download Link */
-.resume-download {
-  text-align: center;
-  margin-top: 2em;
-}
-
-.resume-download-link {
-  font-size: 1.2em;
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.resume-download-link:hover {
-  text-decoration: underline;
-}
-
-/* Modal Styles */
-.modal-title {
-  color: #73999B;
-  border-bottom: 2px solid #73999B;
-  padding-bottom: 10px;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.modal-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.modal-image {
-  max-width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
+/* Modal Close Button */
 .modal-close-button {
-  background-color: #73999B;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -447,51 +316,35 @@ tr:hover {
 }
 
 .modal-close-button:hover {
-  background-color: #828077;
+  background-color: var(--hover-color);
 }
 
 .modal-close-button:focus {
   outline: none;
 }
 
-/* Travel Table */
-.travel-table {
-  width: 100%;
-  margin: 20px 0;
-  border-collapse: collapse;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.travel-table th,
-.travel-table td {
+/* Table Hover Effects */
+.travel-table th, .travel-table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #828077;
-  color: #333;
-  font-size: 1rem;
-  font-weight: normal;
+  border-bottom: 1px solid var(--hover-color);
+  color: var(--text-color);
 }
 
 .travel-table th {
-  background-color: #73999B;
+  background-color: var(--primary-color);
   color: white;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .travel-table td {
   background-color: #f9f9f9;
 }
 
-/* Mouseover and Hover Effects for Table Rows */
 .travel-table tr:hover td {
-  background-color: #73999B;
+  background-color: var(--primary-color);
   color: #fff;
-  cursor: pointer;
 }
 
 .travel-table tr:hover th {
-  background-color: #828077;
+  background-color: var(--hover-color);
 }
