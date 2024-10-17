@@ -57,6 +57,8 @@ header h1 {
 .name-link {
   color: #fff;
   text-decoration: none;
+  padding-left: 20px;
+
 }
 
 .name-link:hover {
@@ -101,7 +103,7 @@ nav ul li a:hover {
   justify-content: space-between;
   height: 24px;
   position: absolute;
-  top: 1.5rem;
+  top: 33px;
   left: 10px;
 }
 
