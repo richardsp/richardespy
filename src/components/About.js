@@ -30,7 +30,7 @@ const About = () => {
           src={profileImages[currentImageIndex]} 
           alt="Richard Espy" 
           onClick={handleImageClick} 
-          className="bio-image"
+          className="bio-img"
           style={{ cursor: 'pointer' }} // Make it clear that the image is clickable
         />
         <h1>About Me</h1>

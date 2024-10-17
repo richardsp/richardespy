@@ -24,7 +24,7 @@ const RecipeTemplate = ({ title, description, prepTime, cookTime, servings, ingr
             src={imageSrc} 
             alt={imageAlt || title} 
             onError={() => setImageError(true)} 
-            className="responsive-image"
+            className="recipe-image img"
           />
         </div>
       )}

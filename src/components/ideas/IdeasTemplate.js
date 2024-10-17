@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 
 const IdeasTemplate = ({ title, description, checklist }) => {
   return (
@@ -17,8 +19,7 @@ const IdeasTemplate = ({ title, description, checklist }) => {
           </ul>
         </div>
       )}
-
-      <a href="/ideas">Back to Ideas</a>
+      <Link to ="/ideas">Back to Ideas</Link>
     </section>
   );
 };

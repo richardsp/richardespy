@@ -6,6 +6,7 @@
   --font-size-large: 2.5rem;
   --font-size-medium: 1.8rem;
   --font-size-small: 1.3rem;
+  --font-size-xsmall: 1.1rem; /* Added for smaller font sizes */
 }
 
 /* General Styles */
@@ -15,12 +16,20 @@ body {
   padding: 0 20px;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding-bottom: 100px; /* Extra space below the content */
+  padding-bottom: 100px;
 }
 
 h1, h2, .resume-title, .resume-section-title, .modal-title {
   text-transform: uppercase;
   color: var(--primary-color);
+}
+
+h1 {
+  font-size: var(--font-size-small); /* Same as menu font size */
+}
+
+.resume-section-title {
+  font-size: var(--font-size-xsmall); /* Smaller than default */
 }
 
 /* Header */
@@ -33,12 +42,25 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw; /* Ensures the header extends across the screen */
+  left: 0;
+  margin-left: calc(-50vw + 50%);
 }
 
 header h1 {
   font-size: var(--font-size-large);
   margin: 0;
   letter-spacing: 2px;
+}
+
+/* Name Link */
+.name-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.name-link:hover {
+  text-decoration: none;
 }
 
 /* Navigation */
@@ -62,7 +84,7 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-small); /* Match h1 */
   font-weight: bold;
   transition: color 0.3s ease;
 }
@@ -90,77 +112,13 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Mobile & Desktop Styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .menu.open ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  header h1 {
-    font-size: 2rem; /* Smaller font for mobile */
-  }
-
-  .recipe-image {
-    width: 100%;
-    margin: 15px auto;
-  }
-
-  .map-container {
-    height: 300px;
-    margin-bottom: 50px;
-  }
-}
-
-@media (min-width: 769px) {
-  .menu {
-    display: flex !important;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-
-  nav ul li {
-    margin: 0 30px;
-  }
-
-  nav ul li a {
-    font-size: 1.5rem;
-  }
-
-  .map-container {
-    height: 500px;
-  }
-}
-
 /* Main Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Section */
 .section {
   margin-bottom: 40px;
 }
@@ -181,7 +139,7 @@ nav ul li a:hover {
 }
 
 .bio img {
-  max-width: 200px;
+  /* max-width: 200px; */
   border-radius: 5%;
   width: 250px;
   height: 250px;
@@ -203,6 +161,7 @@ nav ul li a:hover {
 
 .bio-content p {
   margin-top: 10px;
+  white-space: nowrap; /* Prevent wrapping of text */
 }
 
 .bio-content p:first-of-type {
@@ -215,31 +174,51 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-}
-
 /* Recipe Image */
 .recipe-image {
+  width: 100%;           /* Full container width */
+  max-width: 100%;      /* Prevent overflow */
+  height: auto;         /* Maintain aspect ratio */
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;   /* Optional: Rounded corners */
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+/* Modal Image */
+.modal-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 20px auto;
-  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Modal Close Button */
+.modal-close-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.modal-close-button:hover {
+  background-color: var(--hover-color);
+}
+
+.modal-close-button:focus {
+  outline: none;
 }
 
 /* Scrollable Table */
@@ -278,51 +257,6 @@ footer p {
   table-layout: fixed;
 }
 
-/* Travel Map */
-.map-container {
-  width: 100%;
-  position: relative;
-  z-index: -1;
-}
-
-.modal-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px 0;
-}
-
-.name-link {
-  color: #ffff;
-  text-decoration: none;
-}
-
-.name-link:hover {
-  text-decoration: none;
-}
-
-/* Modal Close Button */
-.modal-close-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-.modal-close-button:hover {
-  background-color: var(--hover-color);
-}
-
-.modal-close-button:focus {
-  outline: none;
-}
-
 /* Table Hover Effects */
 .travel-table th, .travel-table td {
   padding: 15px;
@@ -347,4 +281,108 @@ footer p {
 
 .travel-table tr:hover th {
   background-color: var(--hover-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Mobile Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu.open ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Adjust font size for mobile */
+  }
+
+  .bio img {
+    width: 100%;      /* Make the image full width on mobile */
+    margin-bottom: 15px;
+    margin-right: 100px;
+     /* Space below the image */
+  }
+
+  .bio h1 {
+    font-size: var(--font-size-medium);
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 10px;
+    display: inline-block;
+    width: calc(100%);
+  }
+
+  .bio-content {
+    clear: both;      /* Ensure text starts below the image */
+  }
+
+  .recipe-image {
+    margin: 15px auto; /* Center the recipe image on mobile */
+  }
+
+  .map-container {
+    height: 300px; /* Adjust height for mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .hamburger {
+    display: none; /* Hide hamburger icon on larger screens */
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0 30px;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+
+  .map-container {
+    height: 500px; /* Adjust height for larger screens */
+    margin-bottom: 380px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
 }
