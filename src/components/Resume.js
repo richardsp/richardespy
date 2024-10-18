@@ -14,9 +14,15 @@ const Resume = () => {
       <section id="resume" className="section">
       <h2 className="resume-title">Resume</h2>
       </section>
-
+      <h2 className="resume-section-title">Intro</h2>
+       <section>
+        <p>I am really passionate about quality.</p> 
+        <p>I had this realization a couple of months ago when I was talking to my sons. I was talking about how well they were doing their chores, and they began complaining about things that were “not  their job”.</p>
+        <p>I explained to them that doing a good job is not the responsibility of one person, and that <i>everyone</i> is responsible for quality… And then I realized that I have had the exact same conversations with development, product and management in the past.</p>
+        <p>I chuckled to myself, and thought, “Wow, you really believe this stuff!”</p>
+        </section>
       <section>
-        <h2 className="resume-section-title">Summary</h2>
+        <h2 className="resume-section-title">Richard Espy's Resume</h2>
         <p className="resume-section-content">
           Experienced Software QA Engineer passionate about continuous learning and deep product expertise. 
           I seek a dynamic environment where I can directly impact product quality while expanding my knowledge 

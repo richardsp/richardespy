@@ -50,7 +50,6 @@ const About = () => {
         </p>
         <p>
           Thanks for stopping by! Feel free to <Link to='contact'>connect</Link>, and share your thoughts.
-          I’m glad you’re here.
         </p>
       </div>
       <div>
