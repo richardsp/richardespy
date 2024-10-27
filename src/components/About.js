@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+// import WhatILearned from './WhatILearned';
+
 
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
