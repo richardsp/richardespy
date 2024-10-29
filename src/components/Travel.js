@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ComposableMap, Geographies, Geography, Marker, Annotation } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 import Modal from 'react-modal';
 import { placesVisited } from '../travel/placesData'; 
 import { travelDescriptions } from '../travel/TravelDescriptions'; 
+import { Tooltip } from 'react-tooltip';
+
 
 const geoUrl = "/assets/maps/countries-110m.json";  // Corrected path
 
@@ -24,7 +26,7 @@ Modal.setAppElement('#root');
 const Travel = () => {
   const [modalData, setModalData] = useState({ isOpen: false, city: '', description: '', images: [] });
   const [geoDataLoaded, setGeoDataLoaded] = useState(true);  // Track if geography data is loaded
-  const [annotationVisibility, setAnnotationVisibility] = useState({}); // Track visibility of annotations
+  const [setAnnotationVisibility] = useState({}); // Track visibility of annotations
 
   useEffect(() => {
     fetch(geoUrl)
@@ -89,44 +91,26 @@ const Travel = () => {
               ))
             }
           </Geographies>
+ 
           {placesVisited.map((place, index) => {
-            const isClickable = hasData(place);
-            return (
-              <Marker key={index} coordinates={place.coordinates}>
-                
-                <circle
-                  r={6}
-                  fill={isClickable ? "#F00" : "#bbb"}
-                  stroke="#fff"
-                  strokeWidth={2}
-                  onClick={() => isClickable && handleMarkerClick(place)}
-                  style={{ cursor: isClickable ? 'pointer' : 'default', pointerEvents: 'all' }}
-                />
-                {annotationVisibility[place.name] && (
-                  <Annotation
-                    subject={place.coordinates}
-                    dx={10}
-                    dy={-30}
-                    connectorProps={{
-                      stroke: "#fff",
-                      strokeWidth: 2,
-                      strokeLinecap: "round",
-                    }}
-                  >
-                    <text
-                      x={4}
-                      fontSize={14}
-                      fontFamily="Verdana, sans-serif"
-                      fill="#333"
-                      style={{ fontWeight: 'bold' }}
-                    >
-                      {place.name}
-                    </text>
-                  </Annotation>
-                )}
-              </Marker>
-            );
-          })}
+  const isClickable = hasData(place);
+  return (
+    <Marker key={index} coordinates={place.coordinates}>
+      <circle
+        r={6}
+        fill={isClickable ? "#F00" : "#bbb"}
+        stroke="#fff"
+        strokeWidth={2}
+        data-tip={place.name}
+        onClick={() => isClickable && handleMarkerClick(place)}
+        style={{ cursor: isClickable ? 'pointer' : 'default', pointerEvents: 'all' }}
+      />
+    </Marker>
+  );
+})}
+<Tooltip place="top" type="dark" effect="float" />
+
+ 
         </ComposableMap>
       </div>
 
