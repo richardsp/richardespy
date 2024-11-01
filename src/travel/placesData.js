@@ -1,7 +1,7 @@
 export const placesVisited = [
   { name: 'Los Angeles', coordinates: [-118.2437, 34.0522], descriptionID: 'losangeles', imageFolder: 'los_angeles'},
-  { name: 'Las Vegas', coordinates: [-115.1398, 36.1699], descriptionID: '' },
-  { name: 'Phoenix', coordinates: [-112.0740, 33.4484], descriptionID: '' },
+  { name: 'Las Vegas', coordinates: [-115.1398, 36.1699], descriptionID: 'lasvegas' },
+  { name: 'Phoenix', coordinates: [-112.0740, 33.4484], descriptionID: 'phoenix' },
   { name: 'Seattle', coordinates: [-122.3321, 47.6062], descriptionID: '' },
   { name: 'San Francisco', coordinates: [-122.4194, 37.7749], descriptionID: '' },
   { name: 'Beaverton', coordinates: [-122.8019, 45.4871], descriptionID: '' },
@@ -30,7 +30,7 @@ export const placesVisited = [
   { name: 'Dakar', coordinates: [-17.4467, 14.6928], descriptionID: '' },
   { name: 'Banjul', coordinates: [-16.5877, 13.4549], descriptionID: '' },
   { name: 'London', coordinates: [-0.1276, 51.5074], descriptionID: '' },
-  { name: 'Geneva', coordinates: [6.1432, 46.2044], descriptionID: '' },
+  { name: 'Geneva', coordinates: [6.1432, 46.2044], descriptionID: 'geneva' },
   { name: 'Ho Chi Minh City', coordinates: [106.6297, 10.8231], descriptionID: '' },
   { name: 'Bangkok', coordinates: [100.5018, 13.7563], descriptionID: '' },
   { name: 'Phnom Penh', coordinates: [104.9160, 11.5564], descriptionID: '' },

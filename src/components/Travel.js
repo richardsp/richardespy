@@ -3,30 +3,13 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 import Modal from 'react-modal';
 import { placesVisited } from '../travel/placesData'; 
 import { travelDescriptions } from '../travel/TravelDescriptions'; 
-import { Tooltip } from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';  // Only Tooltip is needed
 
-
-const geoUrl = "/assets/maps/countries-110m.json";  // Corrected path
-
-const getCustomStyles = (hasImages) => ({
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: hasImages ? '70%' : '40%',  // Adjust modal size based on content
-    maxWidth: '90%',
-  },
-});
-
-Modal.setAppElement('#root');
+const geoUrl = "/assets/maps/countries-110m.json";
 
 const Travel = () => {
   const [modalData, setModalData] = useState({ isOpen: false, city: '', description: '', images: [] });
-  const [geoDataLoaded, setGeoDataLoaded] = useState(true);  // Track if geography data is loaded
-  const [setAnnotationVisibility] = useState({}); // Track visibility of annotations
+  const [geoDataLoaded, setGeoDataLoaded] = useState(true);
 
   useEffect(() => {
     fetch(geoUrl)
@@ -37,30 +20,20 @@ const Travel = () => {
         return response.json();
       })
       .then(() => {
-        setGeoDataLoaded(true);  // Geography data loaded successfully
+        console.log("Geography data loaded successfully.");
+        setGeoDataLoaded(true);
       })
       .catch((error) => {
-        setGeoDataLoaded(false);  // Geography data failed to load
+        setGeoDataLoaded(false);
         console.error('Error loading geography data:', error);
       });
   }, []);
 
-  const hasData = (place) => {
-    const hasImages = place.images && place.images.length > 0;
-    const hasDescription = travelDescriptions[place.descriptionID];
-    return hasImages || hasDescription;
-  };
-
   const handleMarkerClick = (place) => {
     const description = travelDescriptions[place.descriptionID] || '';
     const images = place.images || [];
+    console.log(`Clicked on marker: ${place.name}, Description: ${description}`);
     setModalData({ isOpen: true, city: place.name, description, images });
-
-    // Toggle annotation visibility for clicked marker
-    setAnnotationVisibility((prev) => ({
-      ...prev,
-      [place.name]: !prev[place.name],
-    }));
   };
 
   const closeModal = () => {
@@ -68,7 +41,7 @@ const Travel = () => {
   };
 
   if (!geoDataLoaded) {
-    return <p>Error loading map. Please check the map file path.</p>;  // Handle map loading error
+    return <p>Error loading map. Please check the map file path.</p>;
   }
 
   return (
@@ -91,33 +64,34 @@ const Travel = () => {
               ))
             }
           </Geographies>
- 
           {placesVisited.map((place, index) => {
-  const isClickable = hasData(place);
-  return (
-    <Marker key={index} coordinates={place.coordinates}>
-      <circle
-        r={6}
-        fill={isClickable ? "#F00" : "#bbb"}
-        stroke="#fff"
-        strokeWidth={2}
-        data-tip={place.name}
-        onClick={() => isClickable && handleMarkerClick(place)}
-        style={{ cursor: isClickable ? 'pointer' : 'default', pointerEvents: 'all' }}
-      />
-    </Marker>
-  );
-})}
-<Tooltip place="top" type="dark" effect="float" />
-
- 
+            const isClickable = !!travelDescriptions[place.descriptionID];
+            console.log(`Rendering marker for: ${place.name}, Coordinates: ${place.coordinates}`);
+            return (
+              <Marker key={index} coordinates={place.coordinates}>
+                <circle
+                  r={6}
+                  fill={isClickable ? "#F00" : "#bbb"}
+                  stroke="#fff"
+                  strokeWidth={2}
+                  data-tooltip-id="marker-tooltip"  // Attach tooltip ID to each marker
+                  data-tooltip-content={place.name} // Tooltip content is the place name
+                  onClick={() => isClickable && handleMarkerClick(place)}
+                  style={{ cursor: isClickable ? 'pointer' : 'default', pointerEvents: 'visible' }}
+                />
+              </Marker>
+            );
+          })}
         </ComposableMap>
+        
+        {/* Single Tooltip instance */}
+        <Tooltip id="marker-tooltip" place="top" type="dark" effect="float" />
       </div>
 
       <Modal
         isOpen={modalData.isOpen}
         onRequestClose={closeModal}
-        style={getCustomStyles(modalData.images.length > 0)}
+        style={{ /* Modal styling */ }}
       >
         <h2 className="modal-title">{modalData.city}</h2>
         {modalData.description && <p>{modalData.description}</p>}
