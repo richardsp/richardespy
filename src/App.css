@@ -259,18 +259,42 @@ nav ul li a:hover {
   table-layout: fixed;
 }
 
+/* Make the Place column just as wide as the longest place name */
+.travel-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 /* Table Hover Effects */
 .travel-table th, .travel-table td {
-  padding: 15px;
+  padding: 8px 15px;
   text-align: left;
   border-bottom: 1px solid var(--hover-color);
   color: var(--text-color);
+
 }
 
 .travel-table th {
   background-color: var(--primary-color);
   color: white;
+  text-align: left;
 }
+
+/* Set the first column to fit the longest place name */
+.travel-table th:first-child,
+.travel-table td:first-child {
+  width: min-content;
+  white-space: nowrap;
+}
+
+/* Allow the Description column to wrap and take the remaining width */
+.travel-table th:nth-child(2),
+.travel-table td:nth-child(2) {
+  width: auto;
+  word-wrap: break-word;
+  text-align: left;
+}
+
 
 .travel-table td {
   background-color: #f9f9f9;

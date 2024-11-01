@@ -3,7 +3,7 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 import Modal from 'react-modal';
 import { placesVisited } from '../travel/placesData'; 
 import { travelDescriptions } from '../travel/TravelDescriptions'; 
-import { Tooltip } from 'react-tooltip';  // Only Tooltip is needed
+import { Tooltip } from 'react-tooltip';  
 
 const geoUrl = "/assets/maps/countries-110m.json";
 
@@ -74,8 +74,8 @@ const Travel = () => {
                   fill={isClickable ? "#F00" : "#bbb"}
                   stroke="#fff"
                   strokeWidth={2}
-                  data-tooltip-id="marker-tooltip"  // Attach tooltip ID to each marker
-                  data-tooltip-content={place.name} // Tooltip content is the place name
+                  data-tooltip-id="marker-tooltip"  
+                  data-tooltip-content={place.name}
                   onClick={() => isClickable && handleMarkerClick(place)}
                   style={{ cursor: isClickable ? 'pointer' : 'default', pointerEvents: 'visible' }}
                 />
@@ -84,7 +84,6 @@ const Travel = () => {
           })}
         </ComposableMap>
         
-        {/* Single Tooltip instance */}
         <Tooltip id="marker-tooltip" place="top" type="dark" effect="float" />
       </div>
 
