@@ -6,7 +6,7 @@
   --font-size-large: 2.5rem;
   --font-size-medium: 1.8rem;
   --font-size-small: 1.3rem;
-  --font-size-xsmall: 1.1rem; /* Added for smaller font sizes */
+  --font-size-xsmall: 1.1rem;
 }
 
 /* General Styles */
@@ -29,7 +29,7 @@ h1 {
 }
 
 .resume-section-title {
-  font-size: var(--font-size-xsmall); /* Smaller than default */
+  font-size: var(--font-size-xsmall);
 }
 
 /* Header */
@@ -42,7 +42,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw; /* Ensures the header extends across the screen */
+  width: 100vw;
   left: 0;
   margin-left: calc(-50vw + 50%);
 }
@@ -53,16 +53,17 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* Name Link */
-.name-link {
+/* Links */
+.name-link,
+nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding-left: 20px;
-
+  transition: color 0.3s ease;
 }
 
-.name-link:hover {
-  text-decoration: none;
+.name-link:hover,
+nav ul li a:hover {
+  color: var(--hover-color);
 }
 
 /* Navigation */
@@ -84,15 +85,8 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: var(--font-size-small); /* Match h1 */
+  font-size: var(--font-size-small);
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: var(--hover-color);
 }
 
 /* Hamburger Icon */
@@ -141,10 +135,9 @@ nav ul li a:hover {
 }
 
 .bio img {
-  /* max-width: 200px; */
-  border-radius: 5%;
   width: 250px;
   height: 250px;
+  border-radius: 5%;
   object-fit: cover;
   float: left;
   margin-right: 15px;
@@ -163,7 +156,7 @@ nav ul li a:hover {
 
 .bio-content p {
   margin-top: 10px;
-  white-space: nowrap; /* Prevent wrapping of text */
+  white-space: nowrap;
 }
 
 .bio-content p:first-of-type {
@@ -176,29 +169,14 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Recipe Image */
-.recipe-image {
-  width: 100%;           /* Full container width */
-  max-width: 100%;      /* Prevent overflow */
-  height: auto;         /* Maintain aspect ratio */
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;   /* Optional: Rounded corners */
-}
-
-/* Map Container */
-.map-container {
-  width: 100%;
-  position: relative;
-  z-index: -1;
-}
-
-/* Modal Image */
+/* Images */
+.recipe-image,
 .modal-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 10px 0;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 
 /* Modal Close Button */
@@ -219,21 +197,16 @@ nav ul li a:hover {
   background-color: var(--hover-color);
 }
 
-.modal-close-button:focus {
-  outline: none;
-}
-
 /* Scrollable Table */
-.scrollable-table {
+.scrollable-table,
+.travel-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  table-layout: fixed;
-  border: 1px solid var(--hover-color);
 }
 
-.scrollable-table th, .scrollable-table td {
-  padding: 8px;
+.scrollable-table th, .scrollable-table td,
+.travel-table th, .travel-table td {
+  padding: 8px 15px;
   text-align: left;
   border: 1px solid var(--hover-color);
   word-wrap: break-word;
@@ -259,42 +232,16 @@ nav ul li a:hover {
   table-layout: fixed;
 }
 
-/* Make the Place column just as wide as the longest place name */
-.travel-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-/* Table Hover Effects */
-.travel-table th, .travel-table td {
-  padding: 8px 15px;
-  text-align: left;
-  border-bottom: 1px solid var(--hover-color);
-  color: var(--text-color);
-
-}
-
 .travel-table th {
   background-color: var(--primary-color);
   color: white;
-  text-align: left;
 }
 
-/* Set the first column to fit the longest place name */
 .travel-table th:first-child,
 .travel-table td:first-child {
   width: min-content;
   white-space: nowrap;
 }
-
-/* Allow the Description column to wrap and take the remaining width */
-.travel-table th:nth-child(2),
-.travel-table td:nth-child(2) {
-  width: auto;
-  word-wrap: break-word;
-  text-align: left;
-}
-
 
 .travel-table td {
   background-color: #f9f9f9;
@@ -305,13 +252,46 @@ nav ul li a:hover {
   color: #fff;
 }
 
-.travel-table tr:hover th {
-  background-color: var(--hover-color);
+/* Map Container */
+.map-container {
+  width: 100%;
+  position: relative;
+  height: 70vh;
+  max-height: 700px;
+  z-index: 1;
+}
+
+/* Custom Marker Styles */
+.custom-marker {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.marker-red {
+  background-color: red;
+  border: 2px solid white;
+}
+
+.marker-grey {
+  background-color: grey;
+  border: 2px solid white;
+}
+
+/* Tooltip Styling */
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  pointer-events: none;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  /* Mobile Navigation */
   .hamburger {
     display: flex;
   }
@@ -331,14 +311,12 @@ nav ul li a:hover {
   }
 
   header h1 {
-    font-size: 2rem; /* Adjust font size for mobile */
+    font-size: 2rem;
   }
 
   .bio img {
-    width: 100%;      /* Make the image full width on mobile */
+    width: 100%;
     margin-bottom: 15px;
-    margin-right: 100px;
-     /* Space below the image */
   }
 
   .bio h1 {
@@ -348,19 +326,15 @@ nav ul li a:hover {
     border-bottom: 2px solid var(--primary-color);
     margin-bottom: 10px;
     display: inline-block;
-    width: calc(100%);
-  }
-
-  .bio-content {
-    clear: both;      /* Ensure text starts below the image */
+    width: 100%;
   }
 
   .recipe-image {
-    margin: 15px auto; /* Center the recipe image on mobile */
+    margin: 15px auto;
   }
 
   .map-container {
-    height: 300px; /* Adjust height for mobile */
+    height: 300px;
   }
 }
 
@@ -372,7 +346,7 @@ nav ul li a:hover {
   }
 
   .hamburger {
-    display: none; /* Hide hamburger icon on larger screens */
+    display: none;
   }
 
   nav ul {
@@ -387,11 +361,6 @@ nav ul li a:hover {
 
   nav ul li a {
     font-size: 1.5rem;
-  }
-
-  .map-container {
-    height: 500px; /* Adjust height for larger screens */
-    margin-bottom: 380px;
   }
 }
 
