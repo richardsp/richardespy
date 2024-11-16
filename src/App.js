@@ -9,6 +9,8 @@ import Travel from './components/Travel';
 import Ideas from './components/Ideas';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import RecipeTemplate from './components/recipes/_RecipeTemplate';
+import IdeaTemplate from './components/ideas/_IdeasTemplate';
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
           <Route path="/travel" element={<Travel />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Dynamic route for recipes */}
+          <Route path="/recipes/:recipeId" element={<RecipeTemplate />} />
+          {/* Dynamic route for ideas */}
+          <Route path="/ideas/:ideaId" element={<IdeaTemplate />} />
         </Routes>
       </div>
       <Footer />

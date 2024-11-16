@@ -3,8 +3,8 @@ import Modal from 'react-modal';
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { placesVisited } from '../travel/placesData'; 
-import { travelDescriptions } from '../travel/TravelDescriptions'; 
+import { placesVisited } from './travel/_placesData'; 
+import { travelDescriptions } from './travel/TravelDescriptions'; 
 import '../App.css';
 
 delete L.Icon.Default.prototype._getIconUrl;

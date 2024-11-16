@@ -1,8 +1,8 @@
 import React from 'react';
-import RecipeTemplate from './RecipeTemplate';
+import RecipeTemplate from './_RecipeTemplate';
 
 export const recipeMetadata = {
-  name: "Crispy Chicken Thighs on Kale",  // Use 'name' instead of 'title' for consistency
+  name: "Crispy Chicken Thighs on Kale",
   description: "One of my go-to meals is crispy-skinned chicken thighs on a bed of kale. It's a fantastic hands-off weeknight meal that only really requires a cast iron skillet.",
   servings: 4,
   prepTime: "10 minutes",
@@ -11,10 +11,9 @@ export const recipeMetadata = {
   link: '/recipes/crispychickenthighsandkale',
   made: true,
   keeper: true,
-};
-
-const CrispyChickenThighsandKale = () => {
-  const ingredients = [
+  imageSrc: "/assets/cooking/crispychickenthighsandkale.jpeg", // Replace with actual image path
+  imageAlt: "Crispy Chicken Thighs and Kale",
+  ingredients: [
     "4 bone-in, skin-on chicken thighs",
     "1 lb kale, chopped",
     "1 large onion, diced",
@@ -22,15 +21,13 @@ const CrispyChickenThighsandKale = () => {
     "1 lemon, for finishing",
     "Salt to taste",
     "Freshly ground black pepper to taste",
-  ];
-
-  const equipment = [
+  ],
+  equipment: [
     "Cast iron skillet",
     "Wire rack",
     "Spatter shield",
-  ];
-
-  const instructions = [
+  ],
+  instructions: [
     "Pat the chicken thighs dry and score the skin a couple of times. Season generously with salt and pepper. Dry brine the chicken in the fridge for 30 minutes on a wire rack.",
     "Place the chicken thighs skin side down in a cold cast iron skillet. Turn the heat to low and cover with a spatter shield. Let the fat render slowly for 15 minutes, moving the chicken gently with a spatula once the skin releases naturally.",
     "While the chicken is cooking, preheat the oven to 375°F (190°C) and dice the onion. Mince the garlic.",
@@ -40,20 +37,22 @@ const CrispyChickenThighsandKale = () => {
     "Nestle the chicken thighs skin side up on top of the kale and transfer the skillet to the preheated oven. Roast for 15-20 minutes, until the chicken reaches an internal temperature of 165°F (75°C).",
     "Remove the skillet from the oven and let it rest for a couple of minutes. Squeeze fresh lemon juice over the chicken and kale before serving.",
     "Serve the chicken thighs directly from the skillet, using tongs to stir and mix the kale and onions before plating.",
-  ];
+  ],
+};
 
+const CrispyChickenThighsandKale = () => {
   return (
     <RecipeTemplate
-      title={recipeMetadata.name}  // Pass the 'name' field
+      title={recipeMetadata.name}
       description={recipeMetadata.description}
       prepTime={recipeMetadata.prepTime}
       cookTime={recipeMetadata.cookTime}
       servings={recipeMetadata.servings}
-      ingredients={ingredients}
-      imageSrc="/assets/cooking/crispychickenthighsandkale.jpeg"  // Replace with actual image path
-      imageAlt="Crispy Chicken Thighs and Kale"
-      equipment={equipment}
-      instructions={instructions}
+      ingredients={recipeMetadata.ingredients}
+      instructions={recipeMetadata.instructions}
+      imageSrc={recipeMetadata.imageSrc}
+      imageAlt={recipeMetadata.imageAlt}
+      equipment={recipeMetadata.equipment}
     />
   );
 };
