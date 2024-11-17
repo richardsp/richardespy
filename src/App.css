@@ -173,10 +173,31 @@ nav ul li a {
 .recipe-image,
 .modal-image {
   max-width: 100%;
+  width: auto; /* Ensures no fixed width overrides max-width */
   height: auto;
   display: block;
   margin: 10px auto;
   border-radius: 5px;
+}
+
+/* Reset Global Image Rules */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .recipe-image,
+  .modal-image {
+    margin: 15px 0;
+    max-width: 90%;
+    width: auto; /* Override any conflicting widths */
+  }
+
+  .container, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling issues */
+  }
 }
 
 /* Modal Close Button */
