@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeTemplate from './_recipeTemplate';
+import RecipeTemplate from './_recipesTemplate';
 
 export const recipeMetadata = {
   name: 'Meaty Meat Chili',

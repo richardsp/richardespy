@@ -9,7 +9,7 @@ import Travel from './components/Travel';
 import Ideas from './components/Ideas';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import RecipeTemplate from './components/recipes/_recipeTemplate';
+import RecipeTemplate from './components/recipes/_recipesTemplate';
 import IdeaTemplate from './components/ideas/_ideasTemplate';
 
 function App() {
