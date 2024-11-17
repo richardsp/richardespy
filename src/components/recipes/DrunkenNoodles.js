@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeTemplate from './_RecipeTemplate';
+import RecipeTemplate from './_recipeTemplate';
 
 export const recipeMetadata = {
   name: 'Drunken Noodles (Pad Kee Mao)',

@@ -9,8 +9,8 @@ import Travel from './components/Travel';
 import Ideas from './components/Ideas';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import RecipeTemplate from './components/recipes/_RecipeTemplate';
-import IdeaTemplate from './components/ideas/_IdeasTemplate';
+import RecipeTemplate from './components/recipes/_recipeTemplate';
+import IdeaTemplate from './components/ideas/_ideasTemplate';
 
 function App() {
   return (

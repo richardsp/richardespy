@@ -1,5 +1,5 @@
 import React from 'react';
-import IdeasTemplate from './_IdeasTemplate';
+import IdeasTemplate from './_ideasTemplate';
 
 export const ideaMetadata = {
   title: 'Chef Tracker - Find TV chefs restaurants and appearances',

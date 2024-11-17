@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeTemplate from './_RecipeTemplate';
+import RecipeTemplate from './_recipeTemplate';
 
 export const recipeMetadata = {
   name: 'Jalape\u00F1o Bacon Mac & Cheese',
