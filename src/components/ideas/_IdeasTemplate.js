@@ -18,7 +18,7 @@ const IdeasTemplate = () => {
       {/* Conditionally display the checklist */}
       {idea.checklist && idea.checklist.length > 0 && (
         <div>
-          <h3>This is the stuff that :</h3>
+          <h3>This is the stuff that I'd need to do to make this work:</h3>
           <ul>
             {idea.checklist.map((item, index) => (
               <li key={index}>{item}</li>
