@@ -8,7 +8,7 @@ export const recipeMetadata = {
   link: '/recipes/chocolatechipcookies',
   made: true,
   keeper: true,
-  description: "We have a good pedigree for chocolate chip cookies in our house. My daughter's version has won multiple medals at the LA County Fair!",
+  description: "My family has a good pedigree for chocolate chip cookies. My daughter's version has won multiple medals at the LA County Fair!",
   prepTime: '20 minutes + overnight chilling',
   cookTime: '14 minutes per batch',
   servings: 'Makes approximately 24 cookies',
