@@ -15,7 +15,7 @@ export const recipeMetadata = {
   imageSrc: '/assets/cooking/jalapenobaconmacandcheese.jpeg', // Replace with actual image path
   imageAlt: 'Jalapeño Bacon Mac & Cheese',
   ingredients: [
-    '8 strips of bacon (but I typically use a *lot* more...',
+    '8 strips of bacon (but I typically use a *lot* more...)',
     '1/4 cup bacon grease (reserved from cooked bacon)',
     '1 cup panko or bread crumbs',
     '12 oz egg noodles',
@@ -39,7 +39,7 @@ export const recipeMetadata = {
     'Make the Roux: Stir in 1/4 cup of all-purpose flour and cook for 1-2 minutes to form a roux. Gradually whisk in 1 1/2 cups of milk, stirring constantly to prevent lumps. Cook until the mixture thickens, about 3-5 minutes.',
     'Season the Sauce: Add salt, pepper, 1/2 tsp turmeric, and 1/2 tsp curry powder (if using). Slowly whisk in the grated cheeses and stir until fully melted and smooth.',
     'Combine Everything: Add the diced jalapeños and the cooked bacon (crumbled) into the cheese sauce. Stir to combine.',
-    'Assemble the Mac & Cheese: In a large casserole dish, add the cooked noodles. Pour the cheese sauce over the noodles and stir until everything is evenly coated.',
+    'Assemble the mac & cheese: In a large casserole dish, add the cooked noodles. Pour the cheese sauce over the noodles and stir until everything is evenly coated.',
     'Bake: Top the mac & cheese with the toasted breadcrumbs. Bake at 350°F (175°C) for 35-40 minutes until bubbly and golden on top.',
     'Serve: Let it cool for a few minutes before serving.'
   ]
