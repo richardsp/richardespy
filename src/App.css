@@ -218,6 +218,34 @@ img {
   background-color: var(--hover-color);
 }
 
+
+/* Modal Styles */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80vw; /* Limit modal width for larger screens */
+  margin: 0 auto;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-image-container img {
+  max-width: 100%; /* Prevents oversized images */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures full image visibility */
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90vw; /* Narrower modal for mobile devices */
+  }
+
+  .modal-image-container img {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
 /* Scrollable Table */
 .scrollable-table,
 .travel-table {
@@ -269,14 +297,18 @@ img {
 }
 
 .travel-table tr:hover td {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: #e6f7ff;
+}
+
+.highlight-row {
+  background-color: #f0f8ff;
+  cursor: pointer;
 }
 
 /* Map Container */
 .map-container {
   width: 100%;
-  position: relative;
+  position: static;
   height: 70vh;
   max-height: 700px;
   z-index: 1;

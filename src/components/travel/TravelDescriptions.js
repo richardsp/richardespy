@@ -6,8 +6,9 @@ export const travelDescriptions = {
   seattle: 'I have a lot of family in Seattle. I\'ve beeen there a number of times when I was a kid and a few times as an adult. I love going to Dick\'s Drive In, and visiting the Space Needle... and of course Costco\'s home store!',
   tokyo: 'I\'ve visited Tokyo a few times. Walking around is interesting because I\'m taller than almost everyone. Most recently I took my oldest son there, and we hiked up Mt. Fuji! It was an amazing experience.',
   sanfrancisco: 'I had a great time here taking my kids to the Exploratorium! That, and giving my son his first oyster were really memorable experiences (he didn\'t like it).',
-  beaverton: 'I spent some time in the spring in Beaverton. There was so much pollen in the air, that I couldn\'t go outside without sneezing like a madman!',
+  eugene: 'I spent some time in the spring in Eugene. There was so much pollen in the air, that I couldn\'t go outside without sneezing like a madman!',
   chicago: 'I spent Thanksgiving in Chicago a few years ago. Had some deep dish pizza, went to a Blackhawks game, and stood under The Bean.',
+  kihei: 'One of the best \'only in Hawaii\' things to do is get a bike tour of Haleakala. It\'s the second longest bike ride you can coast downhill in the world!',
   
 
   // Add more descriptions for other places here
