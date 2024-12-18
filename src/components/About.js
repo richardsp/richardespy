@@ -48,7 +48,7 @@ const About = () => {
           I find immense satisfaction in the art of culinary creation.
         </p>
         <p>
-          I built this site to teach myself new skills, talk about my culinary adventures, and share some of <Link to='/ideas'>my ideas</Link>. It's a work in progress!
+          I built this site to teach myself new skills, talk about my culinary adventures, and share some of my ideas. It's a work in progress!
         </p>
         <p>
           Thanks for stopping by! Feel free to <Link to='contact'>connect</Link>, and share your thoughts.
