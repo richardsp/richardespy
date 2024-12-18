@@ -158,7 +158,7 @@ const Travel = () => {
                 <img
                   key={idx}
                   src={`/assets/travel/${modalData.city.toLowerCase().replace(/\s/g, '_')}/${image}`}
-                  alt={`Image of ${modalData.city}    `}
+                  alt={`Image of ${modalData.city}`}
                   style={{ maxWidth: '100%', marginBottom: '10px' }}
                 />
               ))}
