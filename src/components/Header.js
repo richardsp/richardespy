@@ -32,7 +32,7 @@ function Header() {
           <li><Link to="/resume" onClick={closeMenu}>Resume</Link></li>
           <li><Link to="/cooking" onClick={closeMenu}>Cooking</Link></li>
           <li><Link to="/travel" onClick={closeMenu}>Travel</Link></li>
-          <li><Link to="/ideas" onClick={closeMenu}>Ideas</Link></li>
+          {/* <li><Link to="/ideas" onClick={closeMenu}>Ideas</Link></li> */}
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
       </nav>

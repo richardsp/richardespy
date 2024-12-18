@@ -22,10 +22,10 @@ const blueIcon = L.icon({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-// Preprocess static data
+// Preprocess static data with conditional icons
 const processedPlaces = placesVisited.map((place) => ({
   ...place,
-  icon: place.descriptionID ? greenIcon : blueIcon,
+  icon: place.descriptionID || (place.images && place.images.length > 0) ? greenIcon : blueIcon,
 }));
 
 Modal.setAppElement('#root');
@@ -36,7 +36,7 @@ const FlyToComponent = ({ center }) => {
   React.useEffect(() => {
     if (center) {
       console.log('Flying map to:', center);
-      map.flyTo(center, 5, { duration: 1.5 }); // Updated zoom level to 5
+      map.flyTo(center, 5, { duration: 1.5 });
     }
   }, [center, map]);
 
@@ -49,46 +49,26 @@ const Travel = () => {
     city: '',
     description: '',
     images: [],
-    position: null, // Track position of the marker
+    position: null,
   });
-  const [mapCenter, setMapCenter] = useState([39.50, -98.35]); // Controlled center
-  const mapRef = useRef(null); // Reference to the map instance
+  const [mapCenter, setMapCenter] = useState([39.50, -98.35]);
+  const mapRef = useRef(null);
 
-  // Helper to calculate modal position
   const getMarkerPosition = (lat, lng) => {
-    console.log('getMarkerPosition called with:', lat, lng);
-  
-    if (!mapRef.current) {
-      console.warn('Map reference is not available in getMarkerPosition!');
-      return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' };
-    }
-  
-    const markerPoint = mapRef.current.latLngToContainerPoint([lat, lng]); // Position relative to container
-    const containerRect = mapRef.current.getContainer().getBoundingClientRect(); // Map container bounds
-  
-    const modalWidth = modalData.images.length > 0 ? 0.8 * containerRect.width : 0.4 * containerRect.width; // Modal width
-    const modalHeight = 300; // Estimated modal height
-    const hardcodedYOffset = -300; // Hardcoded offset to shift modal upward
-  
-    console.log('Modal Position:', {
-      top: containerRect.top + markerPoint.y - modalHeight / 2 + hardcodedYOffset,
-      left: containerRect.left + markerPoint.x - modalWidth / 2,
-    });
-  
+    if (!mapRef.current) return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' };
+    const markerPoint = mapRef.current.latLngToContainerPoint([lat, lng]);
+    const containerRect = mapRef.current.getContainer().getBoundingClientRect();
+
     return {
-      top: `${containerRect.top + markerPoint.y - modalHeight / 2 + hardcodedYOffset}px`, // Adjust with hardcoded Y offset
-      left: `${containerRect.left + markerPoint.x - modalWidth / 2}px`, // Horizontal alignment
-      transform: 'translate(-50%, -50%)', // Center modal relative to the calculated position
+      top: `${containerRect.top + markerPoint.y - 150}px`,
+      left: `${containerRect.left + markerPoint.x}px`,
+      transform: 'translate(-50%, -50%)',
     };
   };
-  
 
   const handleMarkerClick = (place) => {
     const { lat, lng } = place.coordinates;
-
-    console.log('Marker clicked:', { lat, lng });
-
-    setMapCenter([lat, lng]); // Center the map first
+    setMapCenter([lat, lng]);
 
     const description = travelDescriptions[place.descriptionID] || '';
     const images = place.images || [];
@@ -98,27 +78,18 @@ const Travel = () => {
         city: place.name,
         description,
         images,
-        position: { lat, lng }, // Add marker position
+        position: { lat, lng },
       });
     }
   };
 
-  const handleTableRowClick = (place) => {
-    const { lat, lng } = place.coordinates;
-
-    console.log('Table row clicked:', { lat, lng });
-
-    setMapCenter([lat, lng]); // Update map center
-  };
-
   const closeModal = () => {
-    console.log('Closing modal...');
     setModalData({
       isOpen: false,
       city: '',
       description: '',
       images: [],
-      position: null, // Clear position on close
+      position: null,
     });
   };
 
@@ -131,8 +102,7 @@ const Travel = () => {
           zoom={4}
           className="map-container"
           whenCreated={(mapInstance) => {
-            console.log('Map instance created:', mapInstance);
-            mapRef.current = mapInstance; // Initialize map reference
+            mapRef.current = mapInstance;
           }}
         >
           <FlyToComponent center={mapCenter} />
@@ -159,7 +129,6 @@ const Travel = () => {
       </div>
 
       {modalData.isOpen && modalData.position && (
-        console.log('Rendering modal with position:', modalData.position),
         <Modal
           isOpen={modalData.isOpen}
           onRequestClose={closeModal}
@@ -169,54 +138,33 @@ const Travel = () => {
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
             },
             content: {
-              position: 'relative',
-              ...getMarkerPosition(modalData.position.lat, modalData.position.lng), // Dynamic position
-              width: modalData.images.length > 0 ? '80%' : '80%',
+              position: 'absolute',
+              ...getMarkerPosition(modalData.position.lat, modalData.position.lng),
+              width: modalData.images.length > 0 ? '80%' : '40%',
               height: 'auto',
               padding: '15px',
               borderRadius: '10px',
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
               backgroundColor: '#fff',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
               overflowY: 'auto',
             },
           }}
         >
-          <h2 className="modal-title">{modalData.city}</h2>
+          <h2>{modalData.city}</h2>
           {modalData.description && <p>{modalData.description}</p>}
           {modalData.images.length > 0 && (
-            <div className="modal-image-container">
-              {modalData.images.map((image, index) => (
+            <div>
+              {modalData.images.map((image, idx) => (
                 <img
-                  key={index}
+                  key={idx}
                   src={`/assets/travel/${modalData.city.toLowerCase().replace(/\s/g, '_')}/${image}`}
-                  alt={modalData.city}
-                  className="modal-image"
-                  style={{
-                    maxWidth: '100%',
-                    marginBottom: '10px',
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
+                  alt={`${modalData.city} image ${idx}`}
+                  style={{ maxWidth: '100%', marginBottom: '10px' }}
                 />
               ))}
             </div>
           )}
-          <button
-            className="modal-close-button"
-            onClick={closeModal}
-            style={{
-              marginTop: '20px',
-              alignSelf: 'flex-end',
-              padding: '10px 20px',
-              borderRadius: '5px',
-            }}
-          >
-            Close
-          </button>
+          <button onClick={closeModal}>Close</button>
         </Modal>
       )}
 
@@ -231,17 +179,9 @@ const Travel = () => {
         <tbody>
           {processedPlaces
             .slice()
-            .sort((a, b) => {
-              if (a.name === 'Los Angeles') return -1;
-              if (b.name === 'Los Angeles') return 1;
-              return a.name.localeCompare(b.name);
-            })
+            .sort((a, b) => a.name.localeCompare(b.name))
             .map((place, index) => (
-              <tr
-                key={index}
-                className="travel-table-row"
-                onClick={() => handleTableRowClick(place)}
-              >
+              <tr key={index} onClick={() => setMapCenter([place.coordinates.lat, place.coordinates.lng])}>
                 <td>{place.name}</td>
                 <td>{travelDescriptions[place.descriptionID] || ''}</td>
               </tr>

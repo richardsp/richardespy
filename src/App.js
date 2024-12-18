@@ -7,11 +7,11 @@ import About from './components/About';
 import Resume from './components/Resume';
 import Cooking from './components/Cooking';
 import Travel from './components/Travel';
-import Ideas from './components/Ideas';
+// import Ideas from './components/Ideas';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import RecipeTemplate from './components/recipes/_recipesTemplate';
-import IdeaTemplate from './components/ideas/_ideasTemplate';
+// import IdeaTemplate from './components/ideas/_ideasTemplate';
 
 function App() {
   return (
@@ -23,12 +23,12 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/cooking" element={<Cooking />} />
           <Route path="/travel" element={<Travel />} />
-          <Route path="/ideas" element={<Ideas />} />
+          {/* <Route path="/ideas" element={<Ideas />} /> */}
           <Route path="/contact" element={<Contact />} />
           {/* Dynamic route for recipes */}
           <Route path="/recipes/:recipeId" element={<RecipeTemplate />} />
           {/* Dynamic route for ideas */}
-          <Route path="/ideas/:ideaId" element={<IdeaTemplate />} />
+          {/* <Route path="/ideas/:ideaId" element={<IdeaTemplate />} /> */}
         </Routes>
       </div>
       <Footer />
