@@ -1,16 +1,17 @@
-import React from 'react';
-import 'leaflet/dist/leaflet.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header';
-import About from './components/About';
-import Resume from './components/Resume';
-import Cooking from './components/Cooking';
-import Travel from './components/Travel';
+// App.js
+
+import React from "react";
+import "leaflet/dist/leaflet.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import About from "./components/About";
+import Resume from "./components/Resume";
+import Cooking from "./components/Cooking";
+import Travel from "./components/Travel";
 // import Ideas from './components/Ideas';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import RecipeTemplate from './components/recipes/_recipesTemplate';
+import Footer from "./components/Footer";
+import RecipeTemplate from "./components/recipes/_recipesTemplate";
 // import IdeaTemplate from './components/ideas/_ideasTemplate';
 
 function App() {
@@ -24,7 +25,6 @@ function App() {
           <Route path="/cooking" element={<Cooking />} />
           <Route path="/travel" element={<Travel />} />
           {/* <Route path="/ideas" element={<Ideas />} /> */}
-          <Route path="/contact" element={<Contact />} />
           {/* Dynamic route for recipes */}
           <Route path="/recipes/:recipeId" element={<RecipeTemplate />} />
           {/* Dynamic route for ideas */}
