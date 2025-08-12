@@ -29,16 +29,18 @@ const About = () => {
   //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image on click
   // };
 
+  // Code for image block
+  //   <img
+  //   src={profileImages[currentImageIndex]}
+  //   alt="Richard Espy"
+  //   onClick={handleImageClick}
+  //   className="bio-img"
+  //   style={{ cursor: "pointer" }} // Make it clear that the image is clickable
+  // />
+
   return (
     <>
       <div className="bio">
-        <img
-          src={profileImages[currentImageIndex]}
-          alt="Richard Espy"
-          onClick={handleImageClick}
-          className="bio-img"
-          style={{ cursor: "pointer" }} // Make it clear that the image is clickable
-        />
         <h1>About Me</h1>
         <p>
           Hi, I’m Richard Espy — I break software for a living (in the good
