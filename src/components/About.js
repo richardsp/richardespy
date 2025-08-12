@@ -43,7 +43,7 @@ const About = () => {
       <div className="bio">
         <h1>About Me</h1>
         <p>
-          Hi, I’m Richard Espy — I break software for a living (in the good
+          Hi, I’m Richard Espy - I break software for a living (in the good
           way). I’m a <Link to="/resume">QA Engineer</Link> in Los Angeles, and
           I’ve spent a couple of decades making sure digital products actually
           work the way people think they should. I’ve tested everything from
@@ -63,7 +63,7 @@ const About = () => {
           I also tinker with my own ideas. I’m working on a tool called
           Grateplan - it’s a kitchen inventory and meal-planning tool so home
           cooks can skip the last-minute grocery runs. I'm also designing
-          something I'm calling Eightia — a collaborative memory-sharing
+          something I'm calling Eightia - a collaborative memory-sharing
           platform that’s still in the design and prototype phase. Both keep my
           testing chops sharp and let me play with new tech.
         </p>
