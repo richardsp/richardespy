@@ -5,41 +5,41 @@ import { HashLink as Link } from "react-router-hash-link";
 // import WhatILearned from './WhatILearned';
 
 const About = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
-  const imageFolder = "/assets/about/";
-  const imageCount = 4; // Set the total number of profile images you have, adjust this as needed
-  const imageFormat = ".jpg";
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
+  // const imageFolder = "/assets/about/";
+  // const imageCount = 4; // Set the total number of profile images you have, adjust this as needed
+  // const imageFormat = ".jpg";
 
-  const profileImages = Array.from(
-    { length: imageCount },
-    (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`
-  );
+  // const profileImages = Array.from(
+  //   { length: imageCount },
+  //   (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`
+  // );
 
-  // Change image automatically every 10 seconds
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image, loop back if at the last one
-    }, 5000);
+  // // Change image automatically every 10 seconds
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image, loop back if at the last one
+  //   }, 5000);
 
-    return () => clearInterval(intervalId); // Clean up interval on unmount
-  }, [imageCount]);
+  //   return () => clearInterval(intervalId); // Clean up interval on unmount
+  // }, [imageCount]);
 
-  // Change image on click
-  const handleImageClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image on click
-  };
+  // // Change image on click
+  // const handleImageClick = () => {
+  //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image on click
+  // };
 
   return (
     <>
       <div className="bio">
-        {/* <img
+        <img
           src={profileImages[currentImageIndex]}
           alt="Richard Espy"
           onClick={handleImageClick}
           className="bio-img"
           style={{ cursor: "pointer" }} // Make it clear that the image is clickable
         />
-        <h1>About Me</h1> */}
+        <h1>About Me</h1>
         <p>
           Hi, I’m Richard Espy — I break software for a living (in the good
           way). I’m a <Link to="/resume">QA Engineer</Link> in Los Angeles, and
