@@ -32,41 +32,47 @@ const About = () => {
   return (
     <>
       <div className="bio">
-        <img
+        {/* <img
           src={profileImages[currentImageIndex]}
           alt="Richard Espy"
           onClick={handleImageClick}
           className="bio-img"
           style={{ cursor: "pointer" }} // Make it clear that the image is clickable
         />
-        <h1>About Me</h1>
+        <h1>About Me</h1> */}
         <p>
-          Hi! I'm <b>Richard Espy</b>, a{" "}
-          <Link to="/resume">Software QA Engineer</Link> based in Los Angeles,
-          California. With a long career in testing, I've honed my expertise in
-          software analysis, quality assurance, and team management,
-          specializing in Internet technologies. My professional journey is
-          driven by a relentless pursuit of excellence and a passion for making
-          the digital world a better place.
+          Hi, I’m Richard Espy — I break software for a living (in the good
+          way). I’m a <Link to="/resume">QA Engineer</Link> in Los Angeles, and
+          I’ve spent a couple of decades making sure digital products actually
+          work the way people think they should. I’ve tested everything from
+          huge automotive marketplaces to tiny startup apps to my own side
+          projects, catching bugs before they have the chance to ruin someone’s
+          day.
         </p>
         <p>
-          But there's more to me than just lines of code and test cases. I'm a
-          proud father of four, a beginning runner hoping to complete my first
-          marathon, a lover of <Link to="/travel">travel</Link>, and an avid
-          foodie who loves to <Link to="/cooking">cook</Link>. Cooking isn't
-          just a hobby; it's a creative outlet and a way to share joy with my
-          family and friends. Whether I'm perfecting a classic French dish,
-          experimenting with Indian spices, or whipping up a quick and delicious
-          weeknight dinner, I find immense satisfaction in the art of culinary
-          creation.
+          Outside the job, I’m a dad of four, a new runner working toward my
+          first marathon, and a guy who can usually be found in the kitchen.
+          Cooking’s my favorite kind of problem-solving - sometimes it’s a slow,
+          all-day recipe, other times it’s “what can I make from what’s in the
+          fridge right now?” Either way, it’s about making something worth
+          sharing.
         </p>
         <p>
-          I built this site to teach myself new skills, talk about my culinary
-          adventures, and maybe share some of my ideas. It's a work in progress!
+          I also tinker with my own ideas. I’m working on a tool called
+          Grateplan - it’s a kitchen inventory and meal-planning tool so home
+          cooks can skip the last-minute grocery runs. I'm also designing
+          something I'm calling Eightia — a collaborative memory-sharing
+          platform that’s still in the design and prototype phase. Both keep my
+          testing chops sharp and let me play with new tech.
         </p>
         <p>
-          Thanks for stopping by! Feel free to <Link to="contact">connect</Link>
-          , and share your thoughts.
+          I built this site to have a place to share what I’m working on -
+          sometimes QA, sometimes cooking, sometimes a half-baked (or fully
+          baked) idea that I can’t get out of my head. It’s all a work in
+          progress, which honestly is how I like it.
+        </p>
+        <p>
+          Thanks for stopping by! Feel free to connect and share your thoughts.
         </p>
       </div>
       <div>{/* <WhatILearned /> */}</div>

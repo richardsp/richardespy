@@ -1,3 +1,5 @@
+// Footer.js
+
 import React from "react";
 
 function Footer() {
@@ -18,15 +20,6 @@ function Footer() {
             >
               LinkedIn
             </a>{" "}
-            |
-            <a
-              href="https://www.instagram.com/richardespy/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Instagram
-            </a>
           </p>
         </div>
         <div className="footer-section copyright">
