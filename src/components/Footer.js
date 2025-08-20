@@ -19,7 +19,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </a>{" "}
+            </a>
           </p>
         </div>
         <div className="footer-section copyright">
