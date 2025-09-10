@@ -43,15 +43,15 @@ const About = () => {
       <div className="bio">
         <h1>About Me</h1>
         <p>
-          Hi, I’m Richard — QA engineer, father of four, LA Clippers fan,
+          Hi, I’m Richard: a QA engineer, father of four, LA Clippers fan,
           marathoner-in-training, and the kind of person who notices when the
           menu at a restaurant is clipped upside down… and then tries to fix it.
           (It was glued down. Sad trombone.)
         </p>
         <p>
-          I’ve spent more than two decades breaking software in the good way —
+          I’ve spent more than two decades breaking software in the good way -
           catching bugs before they catch users. Big automotive platforms, SaaS
-          startups, my own side projects — I love the puzzle of making sure tech
+          startups, my own side projects: I love the puzzle of making sure tech
           does what people think it should do. My job is basically to advocate
           for the user, whether that user is buying a car or just trying to get
           through checkout without wanting to throw their laptop across the
@@ -66,15 +66,15 @@ const About = () => {
           way, dinner’s going to be interesting.{" "}
         </p>
         <p>
-          I also love to travel — anywhere, really — but especially for events.
-          I try to time trips with local holidays, festivals, or something
-          unforgettable happening nearby. One of my favorite trips was Guatemala
-          during Holy Week, walking streets lined with colorful alfombras and
-          watching the processions. I once accidentally timed a trip to Ko Samui
-          with Loy Krathong and saw the sky filled with floating lanterns. Most
-          recently, I spent four years planning to be in Dallas for the 2024
-          solar eclipse — and yes, I booked my AirBnB near Goldee’s so I could
-          also hit Texas Monthly’s #1 BBQ spot.
+          I also love to travel, but especially for events. I try to time trips
+          with local holidays, festivals, or something unforgettable happening
+          nearby. One of my favorite trips was Guatemala during Holy Week,
+          walking streets lined with colorful alfombras and watching the
+          processions. I once accidentally timed a trip to Ko Samui with Loy
+          Krathong and saw the sky filled with floating lanterns. Most recently,
+          I spent four years planning to be in Dallas for the 2024 solar eclipse
+          and I made sure to book my AirBnB to be near Goldee’s so I could hit
+          Texas Monthly’s #1 BBQ spot.
         </p>
         <p>
           I tinker with my own ideas too. Right now I’m building GratePlan, a
@@ -84,10 +84,10 @@ const About = () => {
           smarter, and with less last-minute chaos.
         </p>
         <p>
-          This site started as a way to learn some new skills. But because I
-          can’t leave well enough alone, I turned it into a place to share some
-          of my stuff — cooking projects, travel notes, and anything else that I
-          think my mother would like to see. Let me know what you think!
+          This site started as a way to add some new stuff to my skill set. But
+          because I can’t leave well enough alone, I turned it into a place to
+          share some stuff I like: cooking projects, travel notes, and anything
+          else I think my mother would like to see. Let me know what you think!
         </p>
       </div>
       <div>{/* <WhatILearned /> */}</div>
