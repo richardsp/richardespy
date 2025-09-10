@@ -43,38 +43,51 @@ const About = () => {
       <div className="bio">
         <h1>About Me</h1>
         <p>
-          Hi, I’m Richard Espy - I break software for a living (in the good
-          way). I’m a <Link to="/resume">QA Engineer</Link> in Los Angeles, and
-          I’ve spent a couple of decades making sure digital products actually
-          work the way people think they should. I’ve tested everything from
-          huge automotive marketplaces to tiny startup apps to my own side
-          projects, catching bugs before they have the chance to ruin someone’s
-          day.
+          Hi, I’m Richard — QA engineer, father of four, Clipper fan,
+          marathoner-in-training, and the kind of person who notices when the
+          menu at a restaurant is clipped upside down and politely asks them to
+          fix it.
         </p>
         <p>
-          Outside the job, I’m a dad of four, a new runner working toward my
-          first marathon, and a guy who can usually be found in the kitchen.
-          Cooking’s my favorite kind of problem-solving - sometimes it’s a slow,
-          all-day recipe, other times it’s “what can I make from what’s in the
-          fridge right now?” Either way, it’s about making something worth
-          sharing.
+          I’ve spent more than two decades breaking software in the good way —
+          catching bugs before they catch users. Big automotive platforms, SaaS
+          startups, my own side projects — I love the puzzle of making sure tech
+          does what people think it should do. My job is basically to advocate
+          for the user, whether that user is buying a car or just trying to get
+          through checkout without wanting to throw their laptop across the
+          room.
         </p>
         <p>
-          I also tinker with my own ideas. I’m working on a tool called
-          Grateplan - it’s a kitchen inventory and meal-planning tool so home
-          cooks can skip the last-minute grocery runs. I'm also designing
-          something I'm calling Eightia - a collaborative memory-sharing
-          platform that’s still in the design and prototype phase. Both keep my
-          testing chops sharp and let me play with new tech.
+          Outside of QA, I solve a different kind of problem: what’s for dinner.
+          Cooking is my favorite creative outlet, equal parts science experiment
+          and comfort ritual. Sometimes that means an all-day braise with
+          homemade stock and perfect mise en place, other times it’s “what can I
+          make with three eggs, half a cabbage, and a jar of gochujang?” Either
+          way, dinner’s going to be interesting.{" "}
         </p>
         <p>
-          I built this site to have a place to share what I’m working on -
-          sometimes QA, sometimes cooking, sometimes a half-baked (or fully
-          baked) idea that I can’t get out of my head. It’s all a work in
-          progress, which honestly is how I like it.
+          I also love to travel — anywhere, really — but especially for events.
+          I try to time trips with local holidays, festivals, or something
+          unforgettable happening nearby. One of my favorite trips was Guatemala
+          during Holy Week, walking streets lined with colorful alfombras and
+          watching the processions. I once accidentally timed a trip to Ko Samui
+          with Loy Krathong and saw the sky filled with floating lanterns. Most
+          recently, I spent four years planning to be in Dallas for the 2024
+          solar eclipse — and yes, I booked my AirBnB near Goldee’s so I could
+          also hit Texas Monthly’s #1 BBQ spot.
         </p>
         <p>
-          Thanks for stopping by! Feel free to connect and share your thoughts.
+          I tinker with my own ideas too. Right now I’m building GratePlan, a
+          kitchen inventory + meal-planning tool, and designing Eightia, a
+          collaborative memory-sharing platform that crowdsources your
+          autobiography. Both scratch the same itch: make life work better,
+          smarter, and with less last-minute chaos.
+        </p>
+        <p>
+          This site started as a way to learn some new skills. But because I
+          can’t leave well enough alone, I turned it into a place to share some
+          of my stuff — cooking projects, travel notes, and anything else that I
+          think my mother would like to see. Let me know what you think!
         </p>
       </div>
       <div>{/* <WhatILearned /> */}</div>

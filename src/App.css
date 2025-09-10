@@ -1,23 +1,23 @@
 :root {
-  /* Modern Color Palette */
-  --primary-color: #3a6ea7; /* matte blue */
-  --primary-dark: #2c5785; /* darker matte blue */
-  --primary-light: #6f93b9; /* muted light blue */
-  --secondary-color: #64748b;
-  --accent-color: #eab308;
+  /* Happy Professional Color Palette - Blue */
+  --primary-color: #2563eb; /* vibrant blue */
+  --primary-dark: #1d4ed8; /* deeper blue */
+  --primary-light: #3b82f6; /* bright blue */
+  --secondary-color: #6b7280;
+  --accent-color: #f59e0b; /* warm amber */
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
 
-  /* Dark Mode Colors */
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --background-primary: #0b1220; /* deeper black-blue */
-  --background-secondary: #131a26;
-  --background-tertiary: #1b2331;
-  --border-color: #2a3446;
-  --border-light: #1b2331;
+  /* Light Mode Colors - Professional & Happy */
+  --text-primary: #1f2937; /* dark gray */
+  --text-secondary: #4b5563; /* medium gray */
+  --text-muted: #6b7280; /* light gray */
+  --background-primary: #ffffff; /* clean white */
+  --background-secondary: #f9fafb; /* very light gray */
+  --background-tertiary: #f3f4f6; /* light gray */
+  --border-color: #d1d5db; /* light border */
+  --border-light: #e5e7eb;
 
   /* Typography */
   --font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -49,14 +49,13 @@
   --spacing-16: 4rem;
   --spacing-20: 5rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 1px 0 rgb(0 0 0 / 0.2);
-  --shadow-md: 0 2px 4px -2px rgb(0 0 0 / 0.25),
-    0 2px 3px -2px rgb(0 0 0 / 0.25);
-  --shadow-lg: 0 6px 10px -4px rgb(0 0 0 / 0.25),
-    0 3px 5px -4px rgb(0 0 0 / 0.25);
-  --shadow-xl: 0 10px 16px -6px rgb(0 0 0 / 0.28),
-    0 6px 10px -6px rgb(0 0 0 / 0.28);
+  /* Shadows - Light & Professional */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Border Radius */
   --radius-sm: 0.25rem;
@@ -134,18 +133,18 @@ a:hover {
 /* Header */
 header {
   background: linear-gradient(
-    180deg,
-    var(--primary-dark) 0%,
-    var(--primary-color) 100%
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
   );
   color: white;
-  padding: var(--spacing-5) 0;
-  box-shadow: var(--shadow-md);
+  padding: var(--spacing-6) 0;
+  box-shadow: var(--shadow-lg);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: saturate(120%) blur(6px);
-  -webkit-backdrop-filter: saturate(120%) blur(6px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -227,6 +226,7 @@ nav ul li a:hover::after {
   flex-direction: column;
   justify-content: space-between;
   height: 24px;
+  width: 28px;
   position: absolute;
   top: 50%;
   left: var(--spacing-4);
@@ -235,15 +235,29 @@ nav ul li a:hover::after {
 }
 
 .hamburger .bar {
-  width: 28px;
+  width: 100%;
   height: 3px;
   background-color: white;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  transform-origin: center;
 }
 
 .hamburger:hover .bar {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hamburger animation when menu is open */
+.menu.open .hamburger .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu.open .hamburger .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.open .hamburger .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Container */
@@ -550,21 +564,36 @@ footer p {
     left: var(--spacing-4);
     top: 50%;
     transform: translateY(-50%);
+    z-index: 102;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 101;
   }
 
   nav ul {
     display: none;
     flex-direction: column;
-    gap: var(--spacing-2);
-    padding: var(--spacing-4);
+    gap: var(--spacing-1);
+    padding: var(--spacing-3);
+    margin: 0;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--primary-dark) 100%
+    );
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-2);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
   }
 
   .menu.open ul {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-lg);
-    margin-top: var(--spacing-4);
-    border: 1px solid var(--border-color);
   }
 
   nav ul li {
@@ -573,8 +602,17 @@ footer p {
 
   nav ul li a {
     display: block;
-    padding: var(--spacing-3) var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-3);
     border-radius: var(--radius-md);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
   }
 
   header h1 {
@@ -718,6 +756,11 @@ footer p {
 .resume-container {
   max-width: 800px;
   margin: 0 auto;
+  background-color: var(--background-primary);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
 }
 
 .resume-title {
