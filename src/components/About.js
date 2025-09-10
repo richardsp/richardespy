@@ -1,7 +1,7 @@
 // About.js
 
 // import React, { useState, useEffect } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
 // import WhatILearned from './WhatILearned';
 
 const About = () => {
@@ -43,10 +43,10 @@ const About = () => {
       <div className="bio">
         <h1>About Me</h1>
         <p>
-          Hi, I’m Richard — QA engineer, father of four, Clipper fan,
+          Hi, I’m Richard — QA engineer, father of four, LA Clippers fan,
           marathoner-in-training, and the kind of person who notices when the
-          menu at a restaurant is clipped upside down and politely asks them to
-          fix it.
+          menu at a restaurant is clipped upside down… and then tries to fix it.
+          (It was glued down. Sad trombone.)
         </p>
         <p>
           I’ve spent more than two decades breaking software in the good way —
