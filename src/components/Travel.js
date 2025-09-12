@@ -1,7 +1,8 @@
 // Travel.js
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-modal";
+import { useLocation } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -94,6 +95,7 @@ const FlyToComponent = ({ center }) => {
 };
 
 const Travel = () => {
+  const location = useLocation();
   const [modalData, setModalData] = useState({
     isOpen: false,
     city: "",
@@ -103,6 +105,21 @@ const Travel = () => {
   });
   const [mapCenter, setMapCenter] = useState([39.5, -98.35]);
   const mapRef = useRef(null);
+
+  // Handle navigation from About page with selected location
+  useEffect(() => {
+    if (location.state?.selectedLocation) {
+      const selectedPlace = placesVisited.find(
+        (place) => place.name === location.state.selectedLocation
+      );
+      if (selectedPlace) {
+        setMapCenter([
+          selectedPlace.coordinates.lat,
+          selectedPlace.coordinates.lng,
+        ]);
+      }
+    }
+  }, [location.state]);
 
   const getMarkerPosition = (lat, lng) => {
     if (!mapRef.current)

@@ -1,52 +1,69 @@
 // About.js
 
-// import React, { useState, useEffect } from "react";
+// import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 // import { HashLink as Link } from "react-router-hash-link";
 // import WhatILearned from './WhatILearned';
 
 const About = () => {
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
-  // const imageFolder = "/assets/about/";
-  // const imageCount = 4; // Set the total number of profile images you have, adjust this as needed
-  // const imageFormat = ".jpg";
+  const navigate = useNavigate();
 
-  // const profileImages = Array.from(
-  //   { length: imageCount },
-  //   (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`
-  // );
+  // Helper function to navigate to travel page with specific location
+  const navigateToTravelLocation = (locationName) => {
+    navigate("/travel", { state: { selectedLocation: locationName } });
+    // Scroll to top of page after navigation
+    window.scrollTo(0, 0);
+  };
 
-  // // Change image automatically every 10 seconds
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image, loop back if at the last one
-  //   }, 5000);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
+  const imageFolder = "/assets/about/";
+  const imageCount = 4; // Set the total number of profile images you have, adjust this as needed
+  const imageFormat = ".jpg";
 
-  //   return () => clearInterval(intervalId); // Clean up interval on unmount
-  // }, [imageCount]);
+  const profileImages = Array.from(
+    { length: imageCount },
+    (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`
+  );
 
-  // // Change image on click
-  // const handleImageClick = () => {
-  //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image on click
-  // };
+  // Change image automatically every 10 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image, loop back if at the last one
+    }, 5000);
 
-  // Code for image block
-  //   <img
-  //   src={profileImages[currentImageIndex]}
-  //   alt="Richard Espy"
-  //   onClick={handleImageClick}
-  //   className="bio-img"
-  //   style={{ cursor: "pointer" }} // Make it clear that the image is clickable
-  // />
+    return () => clearInterval(intervalId); // Clean up interval on unmount
+  }, [imageCount]);
+
+  // Change image on click
+  const handleImageClick = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount); // Move to the next image on click
+  };
 
   return (
     <>
       <div className="bio">
         <h1>About Me</h1>
+        <img
+          src={profileImages[currentImageIndex]}
+          alt="Richard Espy"
+          onClick={handleImageClick}
+          className="bio-img"
+          style={{ cursor: "pointer" }} // Make it clear that the image is clickable
+        />
         <p>
-          Hi, I’m Richard: a QA engineer, father of four, LA Clippers fan,
-          marathoner-in-training, and the kind of person who notices when the
-          menu at a restaurant is clipped upside down… and then tries to fix it.
-          (It was glued down. Sad trombone.)
+          Hi, I'm Richard: a <Link to="/resume">QA engineer</Link>, father of
+          four,{" "}
+          <a
+            href="https://www.nba.com/clippers/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LA Clippers
+          </a>{" "}
+          fan, marathoner-in-training, and the kind of person who notices when
+          the menu at a restaurant is clipped upside down… and then tries to fix
+          it. (It was glued down. Sad trombone.)
         </p>
         <p>
           I’ve spent more than two decades breaking software in the good way -
@@ -58,23 +75,57 @@ const About = () => {
           room.
         </p>
         <p>
-          Outside of QA, I solve a different kind of problem: what’s for dinner.
-          Cooking is my favorite creative outlet, equal parts science experiment
-          and comfort ritual. Sometimes that means an all-day braise with
-          homemade stock and perfect mise en place, other times it’s “what can I
-          make with three eggs, half a cabbage, and a jar of gochujang?” Either
-          way, dinner’s going to be interesting.{" "}
+          Outside of QA, I solve a different kind of problem: what's for dinner.{" "}
+          <Link to="/cooking">Cooking</Link> is my favorite creative outlet,
+          equal parts science experiment and comfort ritual. Sometimes that
+          means an all-day braise with homemade stock and perfect mise en place,
+          other times it's "what can I make with three eggs, half a cabbage, and
+          a jar of gochujang?" Either way, dinner's going to be interesting.{" "}
         </p>
         <p>
           I also love to travel, but especially for events. I try to time trips
           with local holidays, festivals, or something unforgettable happening
-          nearby. One of my favorite trips was Guatemala during Holy Week,
-          walking streets lined with colorful alfombras and watching the
-          processions. I once accidentally timed a trip to Ko Samui with Loy
-          Krathong and saw the sky filled with floating lanterns. Most recently,
-          I spent four years planning to be in Dallas for the 2024 solar eclipse
-          and I made sure to book my AirBnB to be near Goldee’s so I could hit
-          Texas Monthly’s #1 BBQ spot.
+          nearby. One of my favorite trips was{" "}
+          <button
+            onClick={() => navigateToTravelLocation("Guatemala City")}
+            className="travel-link"
+          >
+            Guatemala
+          </button>{" "}
+          during Holy Week, walking streets lined with colorful alfombras and
+          watching the processions. I once accidentally timed a trip to{" "}
+          <button
+            onClick={() => navigateToTravelLocation("Ko Samui")}
+            className="travel-link"
+          >
+            Ko Samui
+          </button>{" "}
+          with{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Loy_Krathong"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Loy Krathong
+          </a>{" "}
+          and saw the sky filled with floating lanterns. More recently, I went
+          to{" "}
+          <button
+            onClick={() => navigateToTravelLocation("Dallas")}
+            className="travel-link"
+          >
+            Dallas
+          </button>{" "}
+          for the 2024 solar eclipse and I made sure to book my AirBnB to be
+          near{" "}
+          <a
+            href="https://goldeesbbq.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Goldee's
+          </a>{" "}
+          so I could hit Texas Monthly's #1 BBQ spot.
         </p>
         <p>
           I tinker with my own ideas too. Right now I’m building GratePlan, a
@@ -87,7 +138,9 @@ const About = () => {
           This site started as a way to add some new stuff to my skill set. But
           because I can’t leave well enough alone, I turned it into a place to
           share some stuff I like: cooking projects, travel notes, and anything
-          else I think my mother would like to see. Let me know what you think!
+          else I think my mother would like to see.{" "}
+          <a href="mailto:richard@richardespy.com">Let me know</a> what you
+          think!
         </p>
       </div>
       <div>{/* <WhatILearned /> */}</div>
