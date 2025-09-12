@@ -635,11 +635,13 @@ footer p {
 
   header h1 {
     font-size: var(--text-2xl);
-    padding-left: var(--spacing-20);
+    padding-left: var(--spacing-4);
     padding-right: var(--spacing-4);
     text-align: center;
     margin: 0;
     flex: 1;
+    position: relative;
+    z-index: 101;
   }
 
   .bio {
