@@ -12,6 +12,7 @@ import Travel from "./components/Travel";
 // import Ideas from './components/Ideas';
 import Footer from "./components/Footer";
 import RecipeTemplate from "./components/recipes/_recipesTemplate";
+import NotFound from "./components/NotFound";
 // import IdeaTemplate from './components/ideas/_ideasTemplate';
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           <Route path="/recipes/:recipeId" element={<RecipeTemplate />} />
           {/* Dynamic route for ideas */}
           {/* <Route path="/ideas/:ideaId" element={<IdeaTemplate />} /> */}
+          {/* 404 catch-all route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
