@@ -34,13 +34,20 @@ function Projects() {
           <article className="project-card" key={project.name}>
             <h2 className="project-heading">{project.name}</h2>
             {project.logo && (
-              <img
-                className="project-logo"
-                src={project.logo}
-                alt={`${project.name} logo`}
-                width="280"
-                height="280"
-              />
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.name}`}
+              >
+                <img
+                  className="project-logo"
+                  src={project.logo}
+                  alt={`${project.name} logo`}
+                  width="280"
+                  height="280"
+                />
+              </a>
             )}
             <p>{project.description}</p>
             {project.details && <p>{project.details}</p>}

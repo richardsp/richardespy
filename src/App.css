@@ -919,6 +919,11 @@ footer p {
   box-shadow: var(--shadow-md);
 }
 
+.project-card a:focus-visible .project-logo {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
   .project-card {
     padding: var(--spacing-6);
