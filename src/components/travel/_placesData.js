@@ -175,6 +175,11 @@ export const placesVisited = [
     descriptionID: "",
   },
   {
+    name: "New Orleans",
+    coordinates: { lat: 29.95106, lng: -90.07153 },
+    descriptionID: "",
+  },
+  {
     name: "New York City",
     coordinates: { lat: 40.73061, lng: -73.935242 },
     descriptionID: "",
@@ -187,6 +192,11 @@ export const placesVisited = [
   {
     name: "Panajachel",
     coordinates: { lat: 14.74185, lng: -91.15676 },
+    descriptionID: "",
+  },
+  {
+    name: "Panama City",
+    coordinates: { lat: 8.983333, lng: -79.51667 },
     descriptionID: "",
   },
   {
