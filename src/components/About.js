@@ -23,7 +23,7 @@ const About = () => {
 
   const profileImages = Array.from(
     { length: imageCount },
-    (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`
+    (_, i) => `${imageFolder}profile${i + 1}${imageFormat}`,
   );
 
   // Change image automatically every 10 seconds
@@ -80,7 +80,8 @@ const About = () => {
           equal parts science experiment and comfort ritual. Sometimes that
           means an all-day braise with homemade stock and perfect mise en place,
           other times it's "what can I make with three eggs, half a cabbage, and
-          a jar of gochujang?" Either way, dinner's going to be interesting.{" "}
+          a jar of gochujang?" Either way, dinner's going to be
+          interesting.{" "}
         </p>
         <p>
           I also love to travel, but especially for events. I try to time trips
@@ -128,10 +129,24 @@ const About = () => {
           so I could hit Texas Monthly's #1 BBQ spot.
         </p>
         <p>
-          I tinker with my own ideas too. Right now I’m building GratePlan, a
-          kitchen inventory + meal-planning tool, and designing Eightia, a
-          collaborative memory-sharing platform that crowdsources your
-          autobiography. Both scratch the same itch: make life work better,
+          I tinker with my own ideas too. Recently, I released{" "}
+          <a
+            href="https://cheaperstreamer.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CheaperStreamer
+          </a>,
+          a website that helps users to optimize their streaming costs. I'm also
+          getting close to releasing{" "}
+          <a
+            href="https://grateplan.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GratePlan
+          </a>, a kitchen inventory +
+          meal-planning tool. Both scratch the same itch: make life work better,
           smarter, and with less last-minute chaos.
         </p>
         <p>

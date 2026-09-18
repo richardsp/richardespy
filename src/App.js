@@ -7,6 +7,7 @@ import "./App.css";
 import Header from "./components/Header";
 import About from "./components/About";
 import Resume from "./components/Resume";
+import Projects from "./components/Projects";
 import Cooking from "./components/Cooking";
 import Travel from "./components/Travel";
 // import Ideas from './components/Ideas';
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/cooking" element={<Cooking />} />
           <Route path="/travel" element={<Travel />} />
           {/* <Route path="/ideas" element={<Ideas />} /> */}

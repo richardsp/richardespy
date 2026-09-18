@@ -885,6 +885,61 @@ footer p {
   border: 1px solid var(--border-color);
 }
 
+/* Projects Styles */
+.projects {
+  margin-top: var(--spacing-8);
+}
+
+.project-list {
+  display: grid;
+  gap: var(--spacing-8);
+}
+
+.project-card {
+  display: flow-root;
+  padding: var(--spacing-8);
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.projects .project-heading {
+  margin-bottom: var(--spacing-4);
+}
+
+.project-logo {
+  width: 280px;
+  height: 280px;
+  float: left;
+  margin-right: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
+  object-fit: contain;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: var(--spacing-6);
+  }
+
+  .project-logo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto var(--spacing-4);
+  }
+
+  .projects .project-heading {
+    font-size: var(--text-2xl);
+    overflow-wrap: anywhere;
+  }
+}
+
 /* Cooking Styles */
 .recipe-list {
   list-style: none;
