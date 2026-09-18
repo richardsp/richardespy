@@ -16,6 +16,22 @@ import { placesVisited } from "./travel/_placesData";
 import { travelDescriptions } from "./travel/TravelDescriptions";
 import "../App.css";
 
+// Use CARTO only when configured; OpenStreetMap needs no API key.
+const cartoApiKey = process.env.REACT_APP_CARTO_BASEMAP_API_KEY?.trim();
+const mapTiles = cartoApiKey
+  ? {
+      url: `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(cartoApiKey)}`,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 20,
+    }
+  : {
+      url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    };
+
 // Define custom icons for markers
 const greenIcon = L.icon({
   iconUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -175,12 +191,7 @@ const Travel = () => {
           }}
         >
           <FlyToComponent center={mapCenter} />
-          <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            subdomains="abcd"
-            maxZoom={20}
-          />
+          <TileLayer {...mapTiles} />
 
           {processedPlaces.map((place, index) => (
             <Marker
