@@ -14,7 +14,7 @@ function Footer() {
         <div className="footer-section">
           <p>
             <a
-              href="https://www.linkedin.com/in/richardespy/"
+              href="https://www.linkedin.com/in/richardespy"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -23,7 +23,7 @@ function Footer() {
           </p>
         </div>
         <div className="footer-section copyright">
-          <p>&copy; 2024 Richard Espy</p>
+          <p>&copy; 2026 Richard Espy</p>
         </div>
       </div>
     </footer>
