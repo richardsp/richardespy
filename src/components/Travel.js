@@ -216,7 +216,7 @@ const Travel = () => {
           onRequestClose={closeModal}
           style={{
             overlay: {
-              zIndex: 100,
+              zIndex: 1200,
               backgroundColor: "rgba(0, 0, 0, 0.5)",
             },
             content: {
